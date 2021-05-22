@@ -1,0 +1,387 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 18px;
+    color: #707070;
+    outline: none;
+}
+.header {
+    height: 81px;
+    width: 100%;
+    box-shadow: 0px 3px 6px #838282;
+}
+
+div.selectboxss {
+    width: 222px;
+    position: relative;
+    height: 36px;
+    border-radius: 18px;
+    border: solid 1px #707070;
+    background-color: #fff;
+    color: #707070;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    top: -7px;
+    z-index: 1;
+}
+div.selectboxss .selectboxssvalue {
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+    height: 36px;
+    line-height: 36px;
+    margin: 0px;
+    padding-left: 10px;
+}
+div.selectboxss img.arrowselect {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 11px;
+    padding: 13px 13px 0px 0px;
+}
+ul.selectboxssmenu {
+    background: #fff;
+    transition: 0.3s;
+    width: 100%;
+    position: absolute;
+    margin-top: 0px;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+}
+ul.selectboxssmenu > li {
+    display: block;
+    border-radius: 0px;
+    cursor: pointer;
+}
+ul.selectboxssmenu > li.selectoption {
+    font-weight: 300;
+    height: 36px;
+    line-height: 36px;
+    color: #707070;
+    padding-left: 12px;
+}
+ul.selectboxssmenu > li.selectoption:hover {
+    background: #f4f4f4;
+    transition: 0.2s;
+}
+
+.mainBlock {
+    width: 1320px;
+    margin: auto;
+    margin-top: 40px;
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+        .title {
+            font-weight: bold;
+            font-size: 30px;
+            color: #707070;
+        }
+        .howtouse {
+            display: flex;
+            width: 304px;
+            justify-content: space-between;
+            height: 36px;
+            line-height: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            &__title {
+                font-size: 18px;
+                color: #707070;
+            }
+            &__icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 100%;
+                text-align: center;
+                line-height: 36px;
+                background-color: #2d4554;
+                font-size: 24px;
+                color: #ffffff;
+            }
+        }
+    }
+
+    &__parameters {
+        margin-top: 50px;
+        display: flex;
+        //flex-wrap: wrap;
+        width: 100%;
+        .left {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 433px;
+            height: 130px;
+            margin-right: 190px;
+        }
+        .model {
+            width: 223px;
+            height: 22px;
+            line-height: 22px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            color: #707070;
+            &__main {
+                font-weight: bold;
+            }
+            &__title {
+                cursor: pointer;
+                font-weight: 300;
+            }
+            &__active {
+                height: 24px;
+                box-sizing: border-box;
+                font-weight: 500;
+                border-bottom: 3px solid #fcc202;
+            }
+        }
+        .waterParam {
+            width: 433px;
+            display: flex;
+            justify-content: space-between;
+            height: 22px;
+            line-height: 22px;
+            font-weight: bold;
+            font-size: 18px;
+            &__select {
+                appearance: none;
+                background: url("/assets/images/icons/arrow.svg") no-repeat right center;
+                background-position-x: 195px;
+                outline: 0;
+                width: 222px;
+                border-radius: 18px;
+                font-weight: 500;
+                font-size: 18px;
+                border-color: #707070;
+                color: #707070;
+                padding: 0 11px;
+                font-family: "Montserrat", Sans-serif;
+            }
+        }
+        .params {
+            width: 378px;
+            height: 22px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .waterParameters {
+            display: flex;
+            width: 170px;
+            height: 22px;
+            justify-content: space-between;
+            line-height: 22px;
+            &__input {
+                box-sizing: border-box;
+                width: 76px;
+                height: 36px;
+                border: 1px solid #707070;
+                text-align: center;
+                color: #000000;
+                font-size: 18px;
+                font-weight: 500;
+                border-radius: 18px;
+                position: relative;
+                top: -7px;
+                outline: none;
+                font-family: "Montserrat", Sans-serif;
+            }
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 608px;
+            font-weight: 500;
+            height: 130px;
+            .weight {
+                position: relative;
+                width: 100%;
+                height: 22px;
+                line-height: 22px;
+            }
+            .buoyancy {
+                position: relative;
+                width: 100%;
+                line-height: 22px;
+                height: 22px;
+            }
+            .ballast {
+                display: flex;
+                position: relative;
+                line-height: 22px;
+                width: 100%;
+                height: 22px;
+            }
+            &__span {
+                position: absolute;
+                color: #000000;
+                left: 213px;
+            }
+            &__span2 {
+                position: absolute;
+                left: 303px;
+            }
+            &__span3 {
+                position: relative;
+                color: #000000;
+                top: -16.5px;
+                margin-right: 5px;
+            }
+            .details {
+                display: flex;
+                position: relative;
+                left: 33px;
+                .detail {
+                    margin-right: 20px;
+                    img {
+                        position: relative;
+                        top: -5px;
+                    }
+                }
+            }
+        }
+        margin-bottom: 83px;
+    }
+    &__scooter {
+        position: relative;
+        display: flex;
+        left: 109px;
+        height: 405px;
+        .scooter-images {
+            position: absolute;
+            bottom: 0;
+            width: 786px;
+            height: 372px;
+            margin-right: 208px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .scooter-points {
+            position: relative;
+            top: 50px;
+            left: 994px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 209px;
+            height: 222px;
+        }
+        .button {
+            text-align: center;
+            user-select: none;
+            width: 209px;
+            height: 58px;
+            background: #ffffff;
+            cursor: pointer;
+            line-height: 58px;
+            font-weight: 500;
+            border-radius: 39px;
+            box-shadow: 0px 0px 7px #838282;
+        }
+        .unactive:hover {
+            background: #f1f0f0;
+        }
+        .button:active {
+            transform: scale(0.99);
+        }
+        .active-btn {
+            background: #fcc202;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+}
+.mainblock {
+    &__accessories {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 25px;
+        .title {
+            font-weight: bold;
+        }
+        .accessories {
+            position: relative;
+            margin-top: 34px;
+            width: 100%;
+            height: 244px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            scrollbar-color: #fcc202 transparent; /* «цвет ползунка» «цвет полосы скроллбара» */
+            scrollbar-width: thin;
+            white-space: nowrap;
+            &__items {
+                cursor: pointer;
+                width: 390px;
+                height: 105px;
+                display: flex;
+            }
+        }
+        .items-image {
+            width: 140px;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .items-name {
+            width: 250px;
+            font-weight: 500;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            span {
+                width: 100%;
+            }
+        }
+    }
+}
+/*.simplebar-track {
+    background: #fcc202;
+}
+.simplebar-track,
+.simplebar-track.simplebar-vertical {
+    width: 1px;
+    overflow: visible;
+    right: 11px;
+}
+.simplebar-scrollbar {
+    border-radius: 14px;
+    width: 13px;
+    height: 109px;
+    background: #fcc202;
+    left: -6px;
+}
+.simplebar-scrollbar:before {
+    background: #fcc202;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+    content: none;
+}
+.simplebar-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}*/
+
+

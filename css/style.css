@@ -1,0 +1,516 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 18px;
+  color: #707070;
+  outline: none;
+}
+
+.header {
+  height: 81px;
+  width: 100%;
+  -webkit-box-shadow: 0px 3px 6px #838282;
+          box-shadow: 0px 3px 6px #838282;
+}
+
+div.selectboxss {
+  width: 222px;
+  position: relative;
+  height: 36px;
+  border-radius: 18px;
+  border: solid 1px #707070;
+  background-color: #fff;
+  color: #707070;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  top: -7px;
+  z-index: 1;
+}
+
+div.selectboxss .selectboxssvalue {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-weight: 500;
+  height: 36px;
+  line-height: 36px;
+  margin: 0px;
+  padding-left: 10px;
+}
+
+div.selectboxss img.arrowselect {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 11px;
+  padding: 13px 13px 0px 0px;
+}
+
+ul.selectboxssmenu {
+  background: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 100%;
+  position: absolute;
+  margin-top: 0px;
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul.selectboxssmenu > li {
+  display: block;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+ul.selectboxssmenu > li.selectoption {
+  font-weight: 300;
+  height: 36px;
+  line-height: 36px;
+  color: #707070;
+  padding-left: 12px;
+}
+
+ul.selectboxssmenu > li.selectoption:hover {
+  background: #f4f4f4;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.mainBlock {
+  width: 1320px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.mainBlock__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainBlock__head .title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #707070;
+}
+
+.mainBlock__head .howtouse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 304px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 36px;
+  line-height: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mainBlock__head .howtouse__title {
+  font-size: 18px;
+  color: #707070;
+}
+
+.mainBlock__head .howtouse__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 36px;
+  background-color: #2d4554;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.mainBlock__parameters {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 83px;
+}
+
+.mainBlock__parameters .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 433px;
+  height: 130px;
+  margin-right: 190px;
+}
+
+.mainBlock__parameters .model {
+  width: 223px;
+  height: 22px;
+  line-height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  color: #707070;
+}
+
+.mainBlock__parameters .model__main {
+  font-weight: bold;
+}
+
+.mainBlock__parameters .model__title {
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.mainBlock__parameters .model__active {
+  height: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  border-bottom: 3px solid #fcc202;
+}
+
+.mainBlock__parameters .waterParam {
+  width: 433px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.mainBlock__parameters .waterParam__select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("/assets/images/icons/arrow.svg") no-repeat right center;
+  background-position-x: 195px;
+  outline: 0;
+  width: 222px;
+  border-radius: 18px;
+  font-weight: 500;
+  font-size: 18px;
+  border-color: #707070;
+  color: #707070;
+  padding: 0 11px;
+  font-family: "Montserrat", Sans-serif;
+}
+
+.mainBlock__parameters .params {
+  width: 378px;
+  height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainBlock__parameters .waterParameters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 170px;
+  height: 22px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: 22px;
+}
+
+.mainBlock__parameters .waterParameters__input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 76px;
+  height: 36px;
+  border: 1px solid #707070;
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 18px;
+  position: relative;
+  top: -7px;
+  outline: none;
+  font-family: "Montserrat", Sans-serif;
+}
+
+.mainBlock__parameters .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 608px;
+  font-weight: 500;
+  height: 130px;
+}
+
+.mainBlock__parameters .right .weight {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+}
+
+.mainBlock__parameters .right .buoyancy {
+  position: relative;
+  width: 100%;
+  line-height: 22px;
+  height: 22px;
+}
+
+.mainBlock__parameters .right .ballast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  line-height: 22px;
+  width: 100%;
+  height: 22px;
+}
+
+.mainBlock__parameters .right__span {
+  position: absolute;
+  color: #000000;
+  left: 213px;
+}
+
+.mainBlock__parameters .right__span2 {
+  position: absolute;
+  left: 303px;
+}
+
+.mainBlock__parameters .right__span3 {
+  position: relative;
+  color: #000000;
+  top: -16.5px;
+  margin-right: 5px;
+}
+
+.mainBlock__parameters .right .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: 33px;
+}
+
+.mainBlock__parameters .right .details .detail {
+  margin-right: 20px;
+}
+
+.mainBlock__parameters .right .details .detail img {
+  position: relative;
+  top: -5px;
+}
+
+.mainBlock__scooter {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 109px;
+  height: 405px;
+}
+
+.mainBlock__scooter .scooter-images {
+  position: absolute;
+  bottom: 0;
+  width: 786px;
+  height: 372px;
+  margin-right: 208px;
+}
+
+.mainBlock__scooter .scooter-images img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainBlock__scooter .scooter-points {
+  position: relative;
+  top: 50px;
+  left: 994px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 209px;
+  height: 222px;
+}
+
+.mainBlock__scooter .button {
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 209px;
+  height: 58px;
+  background: #ffffff;
+  cursor: pointer;
+  line-height: 58px;
+  font-weight: 500;
+  border-radius: 39px;
+  -webkit-box-shadow: 0px 0px 7px #838282;
+          box-shadow: 0px 0px 7px #838282;
+}
+
+.mainBlock__scooter .unactive:hover {
+  background: #f1f0f0;
+}
+
+.mainBlock__scooter .button:active {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+.mainBlock__scooter .active-btn {
+  background: #fcc202;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mainblock__accessories {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 25px;
+}
+
+.mainblock__accessories .title {
+  font-weight: bold;
+}
+
+.mainblock__accessories .accessories {
+  position: relative;
+  margin-top: 34px;
+  width: 100%;
+  height: 244px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  scrollbar-color: #fcc202 transparent;
+  /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+  white-space: nowrap;
+}
+
+.mainblock__accessories .accessories__items {
+  cursor: pointer;
+  width: 390px;
+  height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainblock__accessories .items-image {
+  width: 140px;
+  height: 100%;
+}
+
+.mainblock__accessories .items-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainblock__accessories .items-name {
+  width: 250px;
+  font-weight: 500;
+  text-align: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainblock__accessories .items-name span {
+  width: 100%;
+}
+
+/*.simplebar-track {
+    background: #fcc202;
+}
+.simplebar-track,
+.simplebar-track.simplebar-vertical {
+    width: 1px;
+    overflow: visible;
+    right: 11px;
+}
+.simplebar-scrollbar {
+    border-radius: 14px;
+    width: 13px;
+    height: 109px;
+    background: #fcc202;
+    left: -6px;
+}
+.simplebar-scrollbar:before {
+    background: #fcc202;
+}
+.simplebar-scrollbar.simplebar-visible:before {
+    content: none;
+}
+.simplebar-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}*/
+/*# sourceMappingURL=style.css.map */
