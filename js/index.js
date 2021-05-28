@@ -46,7 +46,19 @@ new PerfectScrollbar('#accessories1', {
     scrollingThreshold: 5000,
     wheelSpeed: 0.5,
 });
-
+new PerfectScrollbar('#accessories2', {
+    maxScrollbarLength: 109,
+    minScrollbarLength: 70,
+    useBothWheelAxes: true,
+    scrollingThreshold: 5000,
+    wheelSpeed: 0.5,
+}); new PerfectScrollbar('#accessories3', {
+    maxScrollbarLength: 109,
+    minScrollbarLength: 70,
+    useBothWheelAxes: true,
+    scrollingThreshold: 5000,
+    wheelSpeed: 0.5,
+});
 const models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
 const acces = JSON.parse($.getJSON({ 'url': "../data/accessories.json", 'async': false }).responseText);
 let Seacraft = {
@@ -170,12 +182,7 @@ let Seacraft = {
                 $('.modal').remove();
             }
         }).appendTo('.htuCard');
-        new PerfectScrollbar('.htuCard', {
-            maxScrollbarLength: 109,
-            useBothWheelAxes: true,
-            scrollingThreshold: 5000,
-            wheelSpeed: 0.2,
-        });
+      
         $(document).mouseup(function (e) {
             var container = $(".modal");
             if (container.has(e.target).length === 0) {
