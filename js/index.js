@@ -25,6 +25,15 @@
 })(jQuery);
 $(document).ready(function () {
     $('.selectboxss').selectbox();
+    if ($(window).width() < 705) {
+        $('.button:eq(0)').text('point 1');
+        $('.button:eq(1)').text('point 2');
+        $('.button:eq(2)').text('point 3');
+    } else {
+        $('.button:eq(0)').text('Mounting point 1');
+        $('.button:eq(1)').text('Mounting point 2');
+        $('.button:eq(2)').text('Mounting point 3');
+    }
     $(window).resize(function () {
         if ($(window).width() < 705) {
             $('.button:eq(0)').text('point 1');
@@ -182,7 +191,7 @@ let Seacraft = {
                 $('.modal').remove();
             }
         }).appendTo('.htuCard');
-      
+
         $(document).mouseup(function (e) {
             var container = $(".modal");
             if (container.has(e.target).length === 0) {
