@@ -352,7 +352,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             border-radius: 39px;
             box-shadow: 0px 0px 7px #838282;
         }
-        .unactive:hover {
+        .button:hover {
             background: #f1f0f0;
         }
         .button:active {
@@ -362,6 +362,9 @@ ul.selectboxssmenu > li.selectoption:hover {
             background: #fcc202;
             color: #fff;
             font-weight: 600;
+        }
+        .active-btn:hover {
+            background: #fcc202;
         }
         @media (max-width: 1320px) {
             left: 0;
@@ -385,12 +388,12 @@ ul.selectboxssmenu > li.selectoption:hover {
         }
         .accessories {
             position: relative;
+            display: none;
             margin-top: 34px;
             width: 100%;
             height: 244px;
             overflow-x: auto;
             overflow-y: hidden;
-            display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             scrollbar-color: #fcc202 transparent; /* «цвет ползунка» «цвет полосы скроллбара» */
@@ -402,6 +405,9 @@ ul.selectboxssmenu > li.selectoption:hover {
                 height: 105px;
                 display: flex;
             }
+        }
+        .accessories_active {
+            display: flex;
         }
         .items-image {
             width: 140px;

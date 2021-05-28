@@ -516,7 +516,7 @@ ul.selectboxssmenu > li.selectoption:hover {
           box-shadow: 0px 0px 7px #838282;
 }
 
-.mainBlock__scooter .unactive:hover {
+.mainBlock__scooter .button:hover {
   background: #f1f0f0;
 }
 
@@ -529,6 +529,10 @@ ul.selectboxssmenu > li.selectoption:hover {
   background: #fcc202;
   color: #fff;
   font-weight: 600;
+}
+
+.mainBlock__scooter .active-btn:hover {
+  background: #fcc202;
 }
 
 @media (max-width: 1320px) {
@@ -563,14 +567,12 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 .mainblock__accessories .accessories {
   position: relative;
+  display: none;
   margin-top: 34px;
   width: 100%;
   height: 244px;
   overflow-x: auto;
   overflow-y: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -587,6 +589,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   cursor: pointer;
   width: 390px;
   height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainblock__accessories .accessories_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

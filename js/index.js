@@ -25,13 +25,14 @@
 })(jQuery);
 $(document).ready(function () { $('.selectboxss').selectbox(); });
 
-new PerfectScrollbar('#accessories', {
+new PerfectScrollbar('#accessories1', {
     maxScrollbarLength: 109,
     useBothWheelAxes: true,
     scrollingThreshold: 5000,
     wheelSpeed: 0.5,
 });
-
+const models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
+const acces = JSON.parse($.getJSON({ 'url': "../data/accessories.json", 'async': false }).responseText);
 let Seacraft = {
     sea: {
         load: function () {
@@ -53,19 +54,60 @@ let Seacraft = {
     },
     scooter: {
         load: function () {
-            let models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
             models.forEach((element, index) => {
                 if (index == 0) {
-                    $('#models').append('<span class="model__title model__active">' + element.nameEN + '</span>');
+                    $('#models').append('<span class="model__title model__active" data-id="' + index + '">' + element.nameEN + '</span>');
                 } else {
-                    $('#models').append('<span class="model__title">' + element.nameEN + '</span>');
+                    $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
                 }
             });
             $('.model__title').click(function () {
                 $('.models').find('.model__active').removeClass('model__active');
                 $(this).addClass('model__active');
+                Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
             });
+            $('.button').click(function () {
+                $('.scooter-points').find('.active-btn').removeClass('active-btn');
+                $(this).addClass('active-btn');
+
+                $('.mainblock__accessories').find('.accessories_active').removeClass('accessories_active');
+                $('#accessories' + $(this).attr('data-point')).addClass('accessories_active');
+            });
+            Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
         },
+    },
+    accessories: {
+        load: function (modelID) {
+            $('#accessories1').html('');
+            $('#accessories2').html('');
+            $('#accessories3').html('');
+            models[modelID].accessories.forEach((element, index) => {
+                acces.forEach((el) => {
+                    if (el.id == element) {
+                        let acs = '<div class="items-image"><img src="./assets/images/accessory/icons/' + el.id + '.svg" alt=""></div><div div class="items-name"><span>Navigation system</span></div>';
+                        if (el.point1 == "1") {
+                            $('<div />', {
+                                "class": 'accessories__items',
+                                "html": acs,
+                            }).appendTo('#accessories1');
+                        }
+                        if (el.point2 == "1") {
+                            $('<div />', {
+                                "class": 'accessories__items',
+                                "html": acs,
+                            }).appendTo('#accessories2');
+                        }
+                        if (el.point3 == "1") {
+                            $('<div />', {
+                                "class": 'accessories__items',
+                                "html": acs,
+                            }).appendTo('#accessories3');
+                        }
+                    }
+                });
+
+            });
+        }
     },
     howtouse: function () {
         $('<div />', {
