@@ -431,6 +431,7 @@ ul.selectboxssmenu > li.selectoption:hover {
   position: relative;
   color: #000000;
   margin-right: 5px;
+  width:65px;
 }
 
 .mainBlock__parameters .right .details {
@@ -446,7 +447,7 @@ ul.selectboxssmenu > li.selectoption:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 20px;
+  margin-right: 13px;
 }
 
 .mainBlock__parameters .right .details .detail img {
