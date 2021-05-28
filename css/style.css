@@ -251,6 +251,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   border-bottom: 3px solid #fcc202;
 }
 
+@media (max-width: 705px) {
+  .mainBlock__parameters .model {
+    font-size: 16px;
+  }
+}
+
 .mainBlock__parameters .waterParam {
   width: 433px;
   display: -webkit-box;
@@ -268,6 +274,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 @media (max-width: 705px) {
   .mainBlock__parameters .waterParam {
     width: 350px;
+    font-size: 16px;
   }
 }
 
@@ -284,9 +291,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters .params {
-    width: 310px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 320px;
   }
 }
 
@@ -321,7 +326,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters .waterParameters {
-    width: 140px;
+    width: 155px;
   }
 }
 
@@ -422,6 +427,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   }
 }
 
+@media (max-width: 705px) {
+  .mainBlock__parameters .right {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 1320px) {
   .mainBlock__parameters {
     -ms-flex-wrap: wrap;
@@ -431,7 +442,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 

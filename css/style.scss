@@ -179,6 +179,9 @@ ul.selectboxssmenu > li.selectoption:hover {
                 font-weight: 500;
                 border-bottom: 3px solid #fcc202;
             }
+            @media (max-width: 705px) {
+                font-size: 16px;
+            }
         }
         .waterParam {
             width: 433px;
@@ -190,6 +193,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             font-size: 18px;
             @media (max-width: 705px) {
                 width: 350px;
+                font-size: 16px;
             }
         }
         .params {
@@ -198,9 +202,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             display: flex;
             justify-content: space-between;
             @media (max-width: 705px) {
-                width: 310px;
-                margin-left: auto;
-                margin-right: auto;
+                width: 320px;
             }
         }
         .waterParameters {
@@ -225,7 +227,7 @@ ul.selectboxssmenu > li.selectoption:hover {
                 font-family: "Montserrat", Sans-serif;
             }
             @media (max-width: 705px) {
-                width: 140px;
+                width: 155px;
             }
         }
         .right {
@@ -293,13 +295,16 @@ ul.selectboxssmenu > li.selectoption:hover {
                     left: 15px;
                 }
             }
+            @media (max-width: 705px) {
+                font-size: 13px;
+            }
         }
         margin-bottom: 83px;
         @media (max-width: 1320px) {
             flex-wrap: wrap;
         }
         @media (max-width: 705px) {
-            font-size: 13px;
+            font-size: 16px;
         }
     }
     &__scooter {
