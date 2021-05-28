@@ -35,6 +35,20 @@ div.selectboxss .selectboxssvalue {
     line-height: 36px;
     margin: 0px;
     padding-left: 10px;
+    input {
+        color: #707070;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        outline: none;
+        height: 36px;
+        line-height: 36px;
+        cursor: pointer;
+        width: 180px;
+    }
 }
 div.selectboxss img.arrowselect {
     position: absolute;
@@ -83,6 +97,9 @@ ul.selectboxssmenu > li.selectoption:hover {
             font-weight: bold;
             font-size: 30px;
             color: #707070;
+            @media (max-width: 1320px) {
+                width: 100%;
+            }
         }
         .howtouse {
             display: flex;
@@ -91,6 +108,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             height: 36px;
             line-height: 36px;
             font-weight: bold;
+            user-select: none;
             cursor: pointer;
             &__title {
                 font-size: 18px;
@@ -112,7 +130,6 @@ ul.selectboxssmenu > li.selectoption:hover {
     &__parameters {
         margin-top: 50px;
         display: flex;
-        //flex-wrap: wrap;
         width: 100%;
         .left {
             display: flex;
@@ -122,21 +139,25 @@ ul.selectboxssmenu > li.selectoption:hover {
             width: 433px;
             height: 130px;
             margin-right: 190px;
+            @media (max-width: 1320px) {
+                margin-bottom: 25px;
+            }
         }
         .model {
-            width: 223px;
             height: 22px;
             line-height: 22px;
             display: flex;
-            justify-content: space-between;
             font-size: 18px;
             color: #707070;
             &__main {
                 font-weight: bold;
+                margin-right: 23px;
             }
             &__title {
+                text-transform: uppercase;
                 cursor: pointer;
                 font-weight: 300;
+                margin-right: 23px;
             }
             &__active {
                 height: 24px;
@@ -252,14 +273,17 @@ ul.selectboxssmenu > li.selectoption:hover {
             }
         }
         margin-bottom: 83px;
+        @media (max-width: 1320px) {
+            flex-wrap: wrap;
+        }
     }
     &__scooter {
         position: relative;
         display: flex;
         left: 109px;
-        height: 405px;
+        margin-bottom: 33px;
         .scooter-images {
-            position: absolute;
+            position: relative;
             bottom: 0;
             width: 786px;
             height: 372px;
@@ -268,16 +292,23 @@ ul.selectboxssmenu > li.selectoption:hover {
                 width: 100%;
                 height: 100%;
             }
+            @media (max-width: 1320px) {
+                margin-right: 0;
+            }
         }
         .scooter-points {
             position: relative;
             top: 50px;
-            left: 994px;
+            left: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             width: 209px;
             height: 222px;
+            @media (max-width: 1320px) {
+                top: 0;
+                margin: auto;
+            }
         }
         .button {
             text-align: center;
@@ -302,6 +333,16 @@ ul.selectboxssmenu > li.selectoption:hover {
             color: #fff;
             font-weight: 600;
         }
+        @media (max-width: 1320px) {
+            left: 0;
+            flex-wrap: wrap;
+        }
+    }
+    @media (max-width: 1320px) {
+        width: 700px;
+    }
+    @media (max-width: 705px) {
+        width: 400px;
     }
 }
 .mainblock {
@@ -353,35 +394,43 @@ ul.selectboxssmenu > li.selectoption:hover {
         }
     }
 }
-/*.simplebar-track {
-    background: #fcc202;
-}
-.simplebar-track,
-.simplebar-track.simplebar-vertical {
-    width: 1px;
-    overflow: visible;
-    right: 11px;
-}
-.simplebar-scrollbar {
-    border-radius: 14px;
-    width: 13px;
-    height: 109px;
-    background: #fcc202;
-    left: -6px;
-}
-.simplebar-scrollbar:before {
-    background: #fcc202;
-}
-.simplebar-scrollbar.simplebar-visible:before {
-    content: none;
-}
-.simplebar-content {
-    overflow-x: auto;
-    overflow-y: hidden;
+.modal {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
-    white-space: nowrap;
-}*/
+    justify-content: center;
+}
+.htuCard {
+    position: relative;
+    background: #fafafa;
+    border-radius: 9px;
+    width: 90%;
+    height: auto;
+    align-items: center;
+    padding: 20px;
+    &__title {
+        font-weight: bold;
+        font-size: 30px;
+        color: #707070;
+        margin-bottom: 30px;
+    }
 
-
+    &__text {
+    }
+    &__сlose {
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-weight: bold;
+        font-size: 30px;
+    }
+}

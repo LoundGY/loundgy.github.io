@@ -15,7 +15,7 @@
     <div class="mainBlock">
         <div class="mainBlock__head">
             <div class="title">Seacraft DPV balance calculator</div>
-            <div class="howtouse">
+            <div id="howtouse" class="howtouse">
                 <div class="howtouse__title">How to use the calculator?</div>
                 <div class="howtouse__icon">?</div>
             </div>
@@ -24,32 +24,26 @@
             <div class="left">
                 <div class="model">
                     <span class="model__main">Model:</span>
-                    <span class="model__title model__active">Future</span>
-                    <span class="model__title">Ghost</span>
+                    <div id="models" class="models">
+                    </div>
+
                 </div>
                 <div class="waterParam">
                     <span>Water parameters:</span>
                     <div class="selectboxss">
-                        <div class="selectboxssvalue"><span>Water</span><img src="./assets/images/icons/arrow.svg"
-                                class="arrowselect" />
+                        <div class="selectboxssvalue"><input id="currentSea" readonly value="Water"></input><img
+                                src="./assets/images/icons/arrow.svg" class="arrowselect" />
                         </div>
-                        <ul class="selectboxssmenu">
-                            <li class="selectoption">Fresh water</li>
-                            <li class="selectoption">Fresh water</li>
-                            <li class="selectoption">Baltic Sea</li>
-                            <li class="selectoption">Baltic Sea</li>
-                            <li class="selectoption">Baltic Sea</li>
-                            <li class="selectoption">Baltic Sea</li>
-
+                        <ul id="seas" class="selectboxssmenu">
                         </ul>
                     </div>
                 </div>
                 <div class="params">
                     <div class="waterParameters">
-                        <span>Salt:</span><input class="waterParameters__input" type="text"><span>‰</span>
+                        <span>Salt:</span><input id="seaSalt" class="waterParameters__input" type="text"><span>‰</span>
                     </div>
                     <div class="waterParameters">
-                        <span>Temp:</span><input class="waterParameters__input" type="text"><span>°C</span>
+                        <span>Temp:</span><input id="seaTemp" class="waterParameters__input" type="text"><span>°C</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +52,7 @@
                         class="right__span2">(Neutral buoyancy in fresh water)</span></div>
                 <div class="buoyancy">Current buoyancy:<span class="right__span">-0.28 kg</span></div>
                 <div class="ballast">Remove the ballast:<div class="details">
-                        <div class="detail"> <span class="right__span3">1 x 65kg</span><img
+                        <div class="detail"> <span class="right__span3">1 x 65g</span><img
                                 src="./assets/images/icons/detail.svg" alt=""></div>
                         <div class="detail">
                             <span class="right__span3">1 x 200g</span><img src="./assets/images/icons/detail.svg"

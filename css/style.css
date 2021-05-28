@@ -43,6 +43,21 @@ div.selectboxss .selectboxssvalue {
   padding-left: 10px;
 }
 
+div.selectboxss .selectboxssvalue input {
+  color: #707070;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  outline: none;
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+  width: 180px;
+}
+
 div.selectboxss img.arrowselect {
   position: absolute;
   right: 0;
@@ -107,6 +122,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   color: #707070;
 }
 
+@media (max-width: 1320px) {
+  .mainBlock__head .title {
+    width: 100%;
+  }
+}
+
 .mainBlock__head .howtouse {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,6 +139,10 @@ ul.selectboxssmenu > li.selectoption:hover {
   height: 36px;
   line-height: 36px;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 
@@ -164,27 +189,32 @@ ul.selectboxssmenu > li.selectoption:hover {
   margin-right: 190px;
 }
 
+@media (max-width: 1320px) {
+  .mainBlock__parameters .left {
+    margin-bottom: 25px;
+  }
+}
+
 .mainBlock__parameters .model {
-  width: 223px;
   height: 22px;
   line-height: 22px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-size: 18px;
   color: #707070;
 }
 
 .mainBlock__parameters .model__main {
   font-weight: bold;
+  margin-right: 23px;
 }
 
 .mainBlock__parameters .model__title {
+  text-transform: uppercase;
   cursor: pointer;
   font-weight: 300;
+  margin-right: 23px;
 }
 
 .mainBlock__parameters .model__active {
@@ -343,17 +373,24 @@ ul.selectboxssmenu > li.selectoption:hover {
   top: -5px;
 }
 
+@media (max-width: 1320px) {
+  .mainBlock__parameters {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .mainBlock__scooter {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   left: 109px;
-  height: 405px;
+  margin-bottom: 33px;
 }
 
 .mainBlock__scooter .scooter-images {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 786px;
   height: 372px;
@@ -365,10 +402,16 @@ ul.selectboxssmenu > li.selectoption:hover {
   height: 100%;
 }
 
+@media (max-width: 1320px) {
+  .mainBlock__scooter .scooter-images {
+    margin-right: 0;
+  }
+}
+
 .mainBlock__scooter .scooter-points {
   position: relative;
   top: 50px;
-  left: 994px;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,6 +424,13 @@ ul.selectboxssmenu > li.selectoption:hover {
           justify-content: space-between;
   width: 209px;
   height: 222px;
+}
+
+@media (max-width: 1320px) {
+  .mainBlock__scooter .scooter-points {
+    top: 0;
+    margin: auto;
+  }
 }
 
 .mainBlock__scooter .button {
@@ -413,6 +463,26 @@ ul.selectboxssmenu > li.selectoption:hover {
   background: #fcc202;
   color: #fff;
   font-weight: 600;
+}
+
+@media (max-width: 1320px) {
+  .mainBlock__scooter {
+    left: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1320px) {
+  .mainBlock {
+    width: 700px;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock {
+    width: 400px;
+  }
 }
 
 .mainblock__accessories {
@@ -483,34 +553,55 @@ ul.selectboxssmenu > li.selectoption:hover {
   width: 100%;
 }
 
-/*.simplebar-track {
-    background: #fcc202;
+.modal {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-.simplebar-track,
-.simplebar-track.simplebar-vertical {
-    width: 1px;
-    overflow: visible;
-    right: 11px;
+
+.htuCard {
+  position: relative;
+  background: #fafafa;
+  border-radius: 9px;
+  width: 90%;
+  height: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
 }
-.simplebar-scrollbar {
-    border-radius: 14px;
-    width: 13px;
-    height: 109px;
-    background: #fcc202;
-    left: -6px;
+
+.htuCard__title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #707070;
+  margin-bottom: 30px;
 }
-.simplebar-scrollbar:before {
-    background: #fcc202;
+
+.htuCard__сlose {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-weight: bold;
+  font-size: 30px;
 }
-.simplebar-scrollbar.simplebar-visible:before {
-    content: none;
-}
-.simplebar-content {
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    white-space: nowrap;
-}*/
 /*# sourceMappingURL=style.css.map */
