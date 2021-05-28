@@ -430,7 +430,6 @@ ul.selectboxssmenu > li.selectoption:hover {
 .mainBlock__parameters .right__span3 {
   position: relative;
   color: #000000;
-  top: -16.5px;
   margin-right: 5px;
 }
 
@@ -443,17 +442,21 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 .mainBlock__parameters .right .details .detail {
+  height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 20px;
 }
 
 .mainBlock__parameters .right .details .detail img {
   position: relative;
-  top: -5px;
 }
 
 @media (max-width: 705px) {
   .mainBlock__parameters .right .details {
-    left: 15px;
+    position: absolute;
+    left: 165px;
   }
 }
 

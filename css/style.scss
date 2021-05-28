@@ -280,7 +280,7 @@ ul.selectboxssmenu > li.selectoption:hover {
                 color: #000000;
                 left: 213px;
                 @media (max-width: 705px) {
-                    left: 172px;
+                    left: 165px;
                 }
             }
             &__span2 {
@@ -295,7 +295,6 @@ ul.selectboxssmenu > li.selectoption:hover {
             &__span3 {
                 position: relative;
                 color: #000000;
-                top: -16.5px;
                 margin-right: 5px;
             }
             .details {
@@ -303,14 +302,16 @@ ul.selectboxssmenu > li.selectoption:hover {
                 position: relative;
                 left: 33px;
                 .detail {
+                    height: 22px;
+                    display: flex;
                     margin-right: 20px;
                     img {
                         position: relative;
-                        top: -5px;
                     }
                 }
                 @media (max-width: 705px) {
-                    left: 15px;
+                    position: absolute;
+                    left: 165px;
                 }
             }
             @media (max-width: 705px) {
@@ -518,6 +519,7 @@ ul.selectboxssmenu > li.selectoption:hover {
     height: auto;
     align-items: center;
     padding: 20px;
+    overflow: auto;
     &__title {
         font-weight: bold;
         font-size: 30px;
