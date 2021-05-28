@@ -6,6 +6,7 @@ body {
     font-size: 18px;
     color: #707070;
     outline: none;
+    min-width: 360px;
 }
 .header {
     height: 81px;
@@ -26,6 +27,9 @@ div.selectboxss {
     transition: 0.3s;
     top: -7px;
     z-index: 1;
+    @media (max-width: 705px) {
+        width: 160px;
+    }
 }
 div.selectboxss .selectboxssvalue {
     cursor: pointer;
@@ -48,6 +52,13 @@ div.selectboxss .selectboxssvalue {
         line-height: 36px;
         cursor: pointer;
         width: 180px;
+        @media (max-width: 705px) {
+            width: 120px;
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 705px) {
+        width: 130px;
     }
 }
 div.selectboxss img.arrowselect {
@@ -78,6 +89,9 @@ ul.selectboxssmenu > li.selectoption {
     line-height: 36px;
     color: #707070;
     padding-left: 12px;
+    @media (max-width: 705px) {
+        font-size: 14px;
+    }
 }
 ul.selectboxssmenu > li.selectoption:hover {
     background: #f4f4f4;
@@ -174,19 +188,8 @@ ul.selectboxssmenu > li.selectoption:hover {
             line-height: 22px;
             font-weight: bold;
             font-size: 18px;
-            &__select {
-                appearance: none;
-                background: url("/assets/images/icons/arrow.svg") no-repeat right center;
-                background-position-x: 195px;
-                outline: 0;
-                width: 222px;
-                border-radius: 18px;
-                font-weight: 500;
-                font-size: 18px;
-                border-color: #707070;
-                color: #707070;
-                padding: 0 11px;
-                font-family: "Montserrat", Sans-serif;
+            @media (max-width: 705px) {
+                width: 350px;
             }
         }
         .params {
@@ -194,6 +197,11 @@ ul.selectboxssmenu > li.selectoption:hover {
             height: 22px;
             display: flex;
             justify-content: space-between;
+            @media (max-width: 705px) {
+                width: 310px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
         .waterParameters {
             display: flex;
@@ -215,6 +223,9 @@ ul.selectboxssmenu > li.selectoption:hover {
                 top: -7px;
                 outline: none;
                 font-family: "Montserrat", Sans-serif;
+            }
+            @media (max-width: 705px) {
+                width: 140px;
             }
         }
         .right {
@@ -248,10 +259,18 @@ ul.selectboxssmenu > li.selectoption:hover {
                 position: absolute;
                 color: #000000;
                 left: 213px;
+                @media (max-width: 705px) {
+                    left: 145px;
+                }
             }
             &__span2 {
                 position: absolute;
                 left: 303px;
+                @media (max-width: 705px) {
+                    font-size: 13px;
+                    line-height: 13px;
+                    left: 225px;
+                }
             }
             &__span3 {
                 position: relative;
@@ -270,11 +289,17 @@ ul.selectboxssmenu > li.selectoption:hover {
                         top: -5px;
                     }
                 }
+                @media (max-width: 705px) {
+                    left: 15px;
+                }
             }
         }
         margin-bottom: 83px;
         @media (max-width: 1320px) {
             flex-wrap: wrap;
+        }
+        @media (max-width: 705px) {
+            font-size: 13px;
         }
     }
     &__scooter {
@@ -342,7 +367,7 @@ ul.selectboxssmenu > li.selectoption:hover {
         width: 700px;
     }
     @media (max-width: 705px) {
-        width: 400px;
+        width: 360px;
     }
 }
 .mainblock {

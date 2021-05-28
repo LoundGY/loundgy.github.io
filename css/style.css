@@ -7,6 +7,7 @@ body {
   font-size: 18px;
   color: #707070;
   outline: none;
+  min-width: 360px;
 }
 
 .header {
@@ -30,6 +31,12 @@ div.selectboxss {
   transition: 0.3s;
   top: -7px;
   z-index: 1;
+}
+
+@media (max-width: 705px) {
+  div.selectboxss {
+    width: 160px;
+  }
 }
 
 div.selectboxss .selectboxssvalue {
@@ -56,6 +63,19 @@ div.selectboxss .selectboxssvalue input {
   line-height: 36px;
   cursor: pointer;
   width: 180px;
+}
+
+@media (max-width: 705px) {
+  div.selectboxss .selectboxssvalue input {
+    width: 120px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 705px) {
+  div.selectboxss .selectboxssvalue {
+    width: 130px;
+  }
 }
 
 div.selectboxss img.arrowselect {
@@ -90,6 +110,12 @@ ul.selectboxssmenu > li.selectoption {
   line-height: 36px;
   color: #707070;
   padding-left: 12px;
+}
+
+@media (max-width: 705px) {
+  ul.selectboxssmenu > li.selectoption {
+    font-size: 14px;
+  }
 }
 
 ul.selectboxssmenu > li.selectoption:hover {
@@ -239,21 +265,10 @@ ul.selectboxssmenu > li.selectoption:hover {
   font-size: 18px;
 }
 
-.mainBlock__parameters .waterParam__select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: url("/assets/images/icons/arrow.svg") no-repeat right center;
-  background-position-x: 195px;
-  outline: 0;
-  width: 222px;
-  border-radius: 18px;
-  font-weight: 500;
-  font-size: 18px;
-  border-color: #707070;
-  color: #707070;
-  padding: 0 11px;
-  font-family: "Montserrat", Sans-serif;
+@media (max-width: 705px) {
+  .mainBlock__parameters .waterParam {
+    width: 350px;
+  }
 }
 
 .mainBlock__parameters .params {
@@ -265,6 +280,14 @@ ul.selectboxssmenu > li.selectoption:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__parameters .params {
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .mainBlock__parameters .waterParameters {
@@ -294,6 +317,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   top: -7px;
   outline: none;
   font-family: "Montserrat", Sans-serif;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__parameters .waterParameters {
+    width: 140px;
+  }
 }
 
 .mainBlock__parameters .right {
@@ -344,9 +373,23 @@ ul.selectboxssmenu > li.selectoption:hover {
   left: 213px;
 }
 
+@media (max-width: 705px) {
+  .mainBlock__parameters .right__span {
+    left: 145px;
+  }
+}
+
 .mainBlock__parameters .right__span2 {
   position: absolute;
   left: 303px;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__parameters .right__span2 {
+    font-size: 13px;
+    line-height: 13px;
+    left: 225px;
+  }
 }
 
 .mainBlock__parameters .right__span3 {
@@ -373,10 +416,22 @@ ul.selectboxssmenu > li.selectoption:hover {
   top: -5px;
 }
 
+@media (max-width: 705px) {
+  .mainBlock__parameters .right .details {
+    left: 15px;
+  }
+}
+
 @media (max-width: 1320px) {
   .mainBlock__parameters {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock__parameters {
+    font-size: 13px;
   }
 }
 
@@ -481,7 +536,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock {
-    width: 400px;
+    width: 360px;
   }
 }
 
