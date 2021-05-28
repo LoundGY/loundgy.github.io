@@ -23,14 +23,30 @@
         });
     };
 })(jQuery);
-$(document).ready(function () { $('.selectboxss').selectbox(); });
+$(document).ready(function () {
+    $('.selectboxss').selectbox();
+    $(window).resize(function () {
+        if ($(window).width() < 705) {
+            $('.button:eq(0)').text('point 1');
+            $('.button:eq(1)').text('point 2');
+            $('.button:eq(2)').text('point 3');
+        } else {
+            $('.button:eq(0)').text('Mounting point 1');
+            $('.button:eq(1)').text('Mounting point 2');
+            $('.button:eq(2)').text('Mounting point 3');
+        }
+    })
+}
+);
 
 new PerfectScrollbar('#accessories1', {
     maxScrollbarLength: 109,
+    minScrollbarLength: 70,
     useBothWheelAxes: true,
     scrollingThreshold: 5000,
     wheelSpeed: 0.5,
 });
+
 const models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
 const acces = JSON.parse($.getJSON({ 'url': "../data/accessories.json", 'async': false }).responseText);
 let Seacraft = {
@@ -78,7 +94,7 @@ let Seacraft = {
     },
     accessories: {
         load: function (modelID) {
-            $('#accessories1').html('');
+            //$('#accessories1').html('');
             $('#accessories2').html('');
             $('#accessories3').html('');
             models[modelID].accessories.forEach((element, index) => {

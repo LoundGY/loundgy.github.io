@@ -16,15 +16,14 @@
   height: 1px;
   bottom: 10px;
   background: #fcc202;
-
   position: absolute;
 }
 
 .ps__rail-y {
-  display: none;
-  width: 15px;
+  width: 1px;
+  background: #fcc202;
   /* there must be 'right' or 'left' for ps__rail-y */
-  right: 0;
+  right: 10px;
   /* please don't change 'position' */
   position: absolute;
 }
@@ -62,13 +61,14 @@
 }
 
 .ps__thumb-y {
-  background-color: #aaa;
-  border-radius: 6px;
+  border-radius: 14px;
+  height: 13px;
+  background: #fcc202;
   transition: background-color 0.2s linear, width 0.2s ease-in-out;
   -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
-  width: 6px;
+  width: 9px;
   /* there must be 'right' for ps__thumb-y */
-  right: 2px;
+  right: -4px;
   /* please don't change 'position' */
   position: absolute;
 }
@@ -76,8 +76,6 @@
 .ps__rail-y:hover > .ps__thumb-y,
 .ps__rail-y:focus > .ps__thumb-y,
 .ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: #999;
-  width: 11px;
 }
 
 /* MS supports */

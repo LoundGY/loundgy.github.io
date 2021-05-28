@@ -35,7 +35,7 @@ div.selectboxss {
 
 @media (max-width: 705px) {
   div.selectboxss {
-    width: 160px;
+    width: 180px;
   }
 }
 
@@ -67,14 +67,14 @@ div.selectboxss .selectboxssvalue input {
 
 @media (max-width: 705px) {
   div.selectboxss .selectboxssvalue input {
-    width: 120px;
+    width: 130px;
     font-size: 14px;
   }
 }
 
 @media (max-width: 705px) {
   div.selectboxss .selectboxssvalue {
-    width: 130px;
+    width: 140px;
   }
 }
 
@@ -150,7 +150,14 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 1320px) {
   .mainBlock__head .title {
-    width: 100%;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock__head .title {
+    font-size: 22px;
+    margin-bottom: 14px;
   }
 }
 
@@ -177,6 +184,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   color: #707070;
 }
 
+@media (max-width: 705px) {
+  .mainBlock__head .howtouse__title {
+    font-size: 14px;
+  }
+}
+
 .mainBlock__head .howtouse__icon {
   width: 36px;
   height: 36px;
@@ -186,6 +199,23 @@ ul.selectboxssmenu > li.selectoption:hover {
   background-color: #2d4554;
   font-size: 24px;
   color: #ffffff;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__head .howtouse__icon {
+    font-size: 12px;
+    line-height: 20px;
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock__head .howtouse {
+    height: 19px;
+    width: 220px;
+    line-height: 19px;
+  }
 }
 
 .mainBlock__parameters {
@@ -380,7 +410,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters .right__span {
-    left: 145px;
+    left: 172px;
   }
 }
 
@@ -391,9 +421,9 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters .right__span2 {
-    font-size: 13px;
-    line-height: 13px;
-    left: 225px;
+    font-size: 14px;
+    line-height: 16px;
+    left: 245px;
   }
 }
 
@@ -429,7 +459,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 705px) {
   .mainBlock__parameters .right {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
@@ -443,6 +473,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 @media (max-width: 705px) {
   .mainBlock__parameters {
     font-size: 16px;
+    margin-top: 38px;
   }
 }
 
@@ -470,7 +501,14 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 @media (max-width: 1320px) {
   .mainBlock__scooter .scooter-images {
-    margin-right: 0;
+    margin: auto;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock__scooter .scooter-images {
+    width: 354px;
+    height: 168px;
   }
 }
 
@@ -478,6 +516,9 @@ ul.selectboxssmenu > li.selectoption:hover {
   position: relative;
   top: 50px;
   left: 0;
+}
+
+.mainBlock__scooter .scooter-points .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -493,9 +534,46 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 @media (max-width: 1320px) {
-  .mainBlock__scooter .scooter-points {
-    top: 0;
+  .mainBlock__scooter .scooter-points .buttons {
     margin: auto;
+    width: 700px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 58px;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainBlock__scooter .scooter-points .buttons {
+    margin: auto;
+    height: 44px;
+    width: 333px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.mainBlock__scooter .scooter-points .title {
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__scooter .scooter-points .title {
+    display: block;
+  }
+}
+
+@media (max-width: 1320px) {
+  .mainBlock__scooter .scooter-points {
+    width: 100%;
+    top: 0;
   }
 }
 
@@ -514,6 +592,15 @@ ul.selectboxssmenu > li.selectoption:hover {
   border-radius: 39px;
   -webkit-box-shadow: 0px 0px 7px #838282;
           box-shadow: 0px 0px 7px #838282;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__scooter .button {
+    width: 101px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 13px;
+  }
 }
 
 .mainBlock__scooter .button:hover {
@@ -594,6 +681,22 @@ ul.selectboxssmenu > li.selectoption:hover {
   display: flex;
 }
 
+@media (max-width: 705px) {
+  .mainblock__accessories .accessories__items {
+    height: 77px;
+    width: 355px;
+  }
+}
+
+@media (max-width: 705px) {
+  .mainblock__accessories .accessories {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .mainblock__accessories .accessories_active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -602,7 +705,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 .mainblock__accessories .items-image {
   width: 140px;
-  height: 100%;
+  height: 105px;
 }
 
 .mainblock__accessories .items-image img {
@@ -610,8 +713,15 @@ ul.selectboxssmenu > li.selectoption:hover {
   height: 100%;
 }
 
+@media (max-width: 705px) {
+  .mainblock__accessories .items-image {
+    width: 103px;
+    height: 77px;
+  }
+}
+
 .mainblock__accessories .items-name {
-  width: 250px;
+  width: 215px;
   font-weight: 500;
   text-align: center;
   height: 100%;
@@ -625,6 +735,12 @@ ul.selectboxssmenu > li.selectoption:hover {
 
 .mainblock__accessories .items-name span {
   width: 100%;
+}
+
+@media (max-width: 705px) {
+  .mainblock__accessories .items-name {
+    font-size: 16px;
+  }
 }
 
 .modal {
