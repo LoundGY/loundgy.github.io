@@ -598,8 +598,8 @@ ul.selectboxssmenu > li.selectoption:hover {
   line-height: 58px;
   font-weight: 500;
   border-radius: 39px;
-  -webkit-box-shadow: 0px 0px 7px #838282;
-          box-shadow: 0px 0px 7px #838282;
+  -webkit-box-shadow: 0px 0px 3px #838282;
+          box-shadow: 0px 0px 3px #838282;
 }
 
 @media (max-width: 705px) {
