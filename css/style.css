@@ -430,13 +430,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 .mainBlock__parameters .right__span3 {
   position: relative;
   color: #000000;
-  word-break: keep-all;
-  min-width: 65px;
-}
-@media (max-width: 705px) {
-  .mainBlock__parameters .right__span3 {
-    
-  }
+  margin-right: 5px;
 }
 
 .mainBlock__parameters .right .details {
@@ -452,7 +446,7 @@ ul.selectboxssmenu > li.selectoption:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 13px;
+  margin-right: 20px;
 }
 
 .mainBlock__parameters .right .details .detail img {
@@ -504,6 +498,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 .mainBlock__scooter .scooter-images img {
+  position: absolute;
   width: 100%;
   height: 100%;
 }
@@ -599,8 +594,8 @@ ul.selectboxssmenu > li.selectoption:hover {
   line-height: 58px;
   font-weight: 500;
   border-radius: 39px;
-  -webkit-box-shadow: 0px 0px 3px #838282;
-          box-shadow: 0px 0px 3px #838282;
+  -webkit-box-shadow: 0px 0px 7px #838282;
+          box-shadow: 0px 0px 7px #838282;
 }
 
 @media (max-width: 705px) {
@@ -657,8 +652,21 @@ ul.selectboxssmenu > li.selectoption:hover {
   margin-bottom: 25px;
 }
 
+.mainblock__accessories .title-tool {
+  font-weight: bold;
+  text-align: center;
+}
+
 .mainblock__accessories .title {
   font-weight: bold;
+}
+
+.mainblock__accessories .active-access {
+  background: #fff4d0;
+}
+
+.mainblock__accessories .itemsTool {
+  border-top: 1px solid #707070;
 }
 
 .mainblock__accessories .accessories {
@@ -713,13 +721,19 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 .mainblock__accessories .items-image {
+  position: relative;
   width: 140px;
   height: 105px;
 }
 
 .mainblock__accessories .items-image img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 130px;
+  height: 60px;
 }
 
 @media (max-width: 705px) {
@@ -740,10 +754,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 5px;
 }
 
 .mainblock__accessories .items-name span {
   width: 100%;
+  white-space: normal;
 }
 
 @media (max-width: 705px) {
@@ -803,5 +819,15 @@ ul.selectboxssmenu > li.selectoption:hover {
   right: 15px;
   font-weight: bold;
   font-size: 30px;
+}
+
+.tippy-box {
+  background: #f4f4f4;
+  color: #707070;
+  border-radius: 5px;
+  max-height: 500px;
+  font-size: 18px;
+  overflow: auto;
+  border: 2px solid #707070;
 }
 /*# sourceMappingURL=style.css.map */

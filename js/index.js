@@ -70,6 +70,7 @@ new PerfectScrollbar('#accessories2', {
 });
 const models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
 const acces = JSON.parse($.getJSON({ 'url': "../data/accessories.json", 'async': false }).responseText);
+let brackets = [[], [], []];
 let Seacraft = {
     sea: {
         load: function () {
@@ -94,19 +95,23 @@ let Seacraft = {
             models.forEach((element, index) => {
                 if (index == 0) {
                     $('#models').append('<span class="model__title model__active" data-id="' + index + '">' + element.nameEN + '</span>');
+                    $('#modelIMG').remove();
+                    $('.scooter-images').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
                 } else {
                     $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
                 }
             });
+
             $('.model__title').click(function () {
                 $('.models').find('.model__active').removeClass('model__active');
                 $(this).addClass('model__active');
                 Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
+                $('.scooter-images').empty();
+                $('.scooter-images').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
             });
             $('.button').click(function () {
                 $('.scooter-points').find('.active-btn').removeClass('active-btn');
                 $(this).addClass('active-btn');
-
                 $('.mainblock__accessories').find('.accessories_active').removeClass('accessories_active');
                 $('#accessories' + $(this).attr('data-point')).addClass('accessories_active');
             });
@@ -115,36 +120,110 @@ let Seacraft = {
     },
     accessories: {
         load: function (modelID) {
-            //$('#accessories1').html('');
+            $('#accessories1').html('');
             $('#accessories2').html('');
             $('#accessories3').html('');
+            brackets[0] = [];
+            brackets[1] = [];
+            brackets[2] = [];
             models[modelID].accessories.forEach((element, index) => {
                 acces.forEach((el) => {
                     if (el.id == element) {
-                        let acs = '<div class="items-image"><img src="./assets/images/accessory/icons/' + el.id + '.svg" alt=""></div><div div class="items-name"><span>Navigation system</span></div>';
+                        let acs = '<div class="items-image"><img src="./assets/images/accessory/icons/' + el.img + '.png" alt=""></div><div div class="items-name"><span>' + el.nameEN + '</span></div>';
                         if (el.point1 == "1") {
+                            if (el.bracket == true) {
+                                brackets[0].push(el);
+                            }
                             $('<div />', {
                                 "class": 'accessories__items',
+                                'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories1');
                         }
                         if (el.point2 == "1") {
+                            if (el.bracket == true) {
+                                brackets[1].push(el);
+                            }
                             $('<div />', {
                                 "class": 'accessories__items',
+                                'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories2');
                         }
                         if (el.point3 == "1") {
+                            if (el.bracket == true) {
+                                brackets[2].push(el);
+                            }
                             $('<div />', {
                                 "class": 'accessories__items',
+                                'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories3');
                         }
                     }
                 });
-
             });
-        }
+            $('.accessories__items').click(function () {
+                if ($(this).hasClass('active-access')) {
+                    $(this).removeClass('active-access');
+                    Seacraft.accessories.choise($(this), $(this).parent().attr('data-access'));
+                } else {
+                    $('#' + $(this).parent().attr('id')).find('.active-access').removeClass('active-access');
+                    $(this).addClass('active-access');
+                    Seacraft.accessories.choise($(this), $(this).parent().attr('data-access'), $(this).attr('data-id'));
+                }
+            });
+        },
+        choise: function (elem, point, id = null, type = null) {
+            $('.accessory' + point + 'IMG').remove();
+            let myAccessry = acces.find(obj => {
+                return obj.id == id
+            });
+            if (id != null) {
+                if (myAccessry.bracket == true || myAccessry.withBracket == false || brackets[point - 1].length < 2) {
+                    $('.scooter-images').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/point' + point + '/' + myAccessry.img + '.png' }));
+                } else {
+                    let htmlTool = '<div class="title-tool">Select a bracket</div>';
+                    brackets[point - 1].forEach((el) => {
+                        htmlTool += '<div class="accessories__items itemsTool" data-id="' + el.id + '"><div class="items-image"><img src="./assets/images/accessory/icons/' + el.img + '.png" alt=""></div><div div class="items-name"><span>' + el.nameEN + '</span></div></div>';
+                    });
+                    htmlTool += '';
+                    tippy(elem[0], {
+                        arrow: false,
+                        content: htmlTool,
+                        trigger: 'click',
+                        hideOnClick: true,
+                        showOnCreate: true,
+                        interactive: true,
+                        maxWidth: 'none',
+                        allowHTML: true,
+                        appendTo: () => $('.mainblock__accessories')[0],
+                        placement: 'top',
+                        zIndex: 9999,
+                        onHidden(instance) {
+                            elem[0]._tippy.destroy();
+                        },
+                        onClickOutside() {
+                            elem.removeClass('active-access');
+                            elem[0]._tippy.destroy();
+                            Seacraft.accessories.choise(elem, point);
+                        },
+                    });
+                    $('.itemsTool').click(function () {
+                        elem[0]._tippy.destroy();
+                        $('.accessory' + point + 'IMG').remove();
+                        Seacraft.accessories.withBracket(point, $(this).attr('data-id'));
+                        Seacraft.accessories.withBracket(point, id);
+                    });
+                }
+            }
+        },
+        withBracket: function (point, id) {
+            let myAccessry = acces.find(obj => {
+                return obj.id == id
+            });
+            $('.scooter-images').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/point' + point + '/' + myAccessry.img + '.png' }));
+        },
     },
     howtouse: function () {
         $('<div />', {
