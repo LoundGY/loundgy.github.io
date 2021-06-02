@@ -192,7 +192,7 @@ let Seacraft = {
                         arrow: false,
                         content: htmlTool,
                         trigger: 'click',
-                        hideOnClick: true,
+                        // hideOnClick: true,
                         showOnCreate: true,
                         interactive: true,
                         maxWidth: 'none',
@@ -201,6 +201,7 @@ let Seacraft = {
                         placement: 'top',
                         zIndex: 9999,
                         onHidden(instance) {
+                            $(".mainblock__accessories").find(`[data-tippy-root]`).remove();
                             elem[0]._tippy.destroy();
                         },
                         onClickOutside() {
@@ -211,6 +212,7 @@ let Seacraft = {
                     });
                     $('.itemsTool').click(function () {
                         elem[0]._tippy.destroy();
+                        $(".mainblock__accessories").find(`[data-tippy-root]`).remove();
                         $('.accessory' + point + 'IMG').remove();
                         Seacraft.accessories.withBracket(point, $(this).attr('data-id'));
                         Seacraft.accessories.withBracket(point, id);

@@ -335,20 +335,25 @@ ul.selectboxssmenu > li.selectoption:hover {
         .scooter-images {
             position: relative;
             bottom: 0;
-            width: 786px;
-            height: 372px;
-            margin-right: 208px;
+            width: 800px;
+            height: 490px;
+            margin-right: 194px;
             img {
                 position: absolute;
-                width: 100%;
-                height: 100%;
+                width: 780px;
+                @media (max-width: 1320px) {
+                    width: 670px;
+                }
+                @media (max-width: 705px) {
+                    width: 340px;
+                }
             }
             @media (max-width: 1320px) {
                 margin: auto;
             }
             @media (max-width: 705px) {
                 width: 354px;
-                height: 168px;
+                height: 220px;
             }
         }
         .scooter-points {
@@ -455,7 +460,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             display: none;
             margin-top: 34px;
             width: 100%;
-            height: 244px;
+            height: 344px;
             overflow-x: auto;
             overflow-y: hidden;
             flex-direction: column;
