@@ -330,6 +330,8 @@ ul.selectboxssmenu > li.selectoption:hover {
     &__scooter {
         position: relative;
         display: flex;
+        justify-content: space-between;
+        width: calc(100% - 109px);
         left: 109px;
         margin-bottom: 33px;
         .scooter-images {
@@ -337,7 +339,6 @@ ul.selectboxssmenu > li.selectoption:hover {
             bottom: 0;
             width: 800px;
             height: 490px;
-            margin-right: 194px;
             img {
                 position: absolute;
                 width: 780px;

@@ -485,6 +485,10 @@ ul.selectboxssmenu > li.selectoption:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 109px);
   left: 109px;
   margin-bottom: 33px;
 }
@@ -494,7 +498,6 @@ ul.selectboxssmenu > li.selectoption:hover {
   bottom: 0;
   width: 800px;
   height: 490px;
-  margin-right: 194px;
 }
 
 .mainBlock__scooter .scooter-images img {
