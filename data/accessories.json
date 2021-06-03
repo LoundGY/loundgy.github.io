@@ -9,6 +9,8 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "0"
@@ -23,6 +25,8 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "0"
@@ -37,6 +41,8 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "0"
@@ -51,6 +57,8 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "0"
@@ -65,6 +73,8 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "0"
@@ -73,12 +83,14 @@
 		"id": 6,
 		"img": 6,
 		"bracket": false,
-		"withBracket": false,
+		"withBracket": "differently",
 		"nameEN": "E/O power outlet",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "0",
 		"point2": "1",
 		"point3": "0"
@@ -87,12 +99,14 @@
 		"id": 7,
 		"img": 6,
 		"bracket": false,
-		"withBracket": false,
+		"withBracket": "differently",
 		"nameEN": "E/O power outlet",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [],
 		"point1": "0",
 		"point2": "1",
 		"point3": "0"
@@ -101,12 +115,16 @@
 		"id": 8,
 		"img": 11,
 		"bracket": false,
-		"withBracket": true,
+		"withBracket": "differently",
 		"nameEN": "ENC3 without speed sensor",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [],
+		"with": [
+			9
+		],
 		"point1": "0",
 		"point2": "1",
 		"point3": "0"
@@ -115,12 +133,18 @@
 		"id": 9,
 		"img": 12,
 		"bracket": false,
-		"withBracket": true,
+		"withBracket": "differently",
 		"nameEN": "ENC3 compact speed sensor",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [
+			10
+		],
+		"with": [
+			8
+		],
 		"point1": "1",
 		"point2": "0",
 		"point3": "0"
@@ -135,6 +159,13 @@
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [
+			9,
+			11,
+			12,
+			13
+		],
+		"with": [],
 		"point1": "1",
 		"point2": "0",
 		"point3": "0"
@@ -143,12 +174,16 @@
 		"id": 11,
 		"img": 7,
 		"bracket": false,
-		"withBracket": true,
+		"withBracket": "differently",
 		"nameEN": "GoPro Hero 7 black with 40m case",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [
+			10
+		],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "1"
@@ -157,12 +192,16 @@
 		"id": 12,
 		"img": 8,
 		"bracket": false,
-		"withBracket": true,
+		"withBracket": "differently",
 		"nameEN": "GoPro Hero 7 black w/ iqSub 150m case",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [
+			10
+		],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "1"
@@ -171,12 +210,16 @@
 		"id": 13,
 		"img": 7,
 		"bracket": false,
-		"withBracket": true,
+		"withBracket": "differently",
 		"nameEN": "Camera mini class Tracer SJ 4000 w/ case",
 		"namePL": "",
 		"weightAir": "",
 		"buoyancyFresh": "",
 		"weightFresh": "",
+		"mix": [
+			10
+		],
+		"with": [],
 		"point1": "1",
 		"point2": "1",
 		"point3": "1"

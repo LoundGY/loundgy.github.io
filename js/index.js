@@ -96,7 +96,7 @@ let Seacraft = {
                 if (index == 0) {
                     $('#models').append('<span class="model__title model__active" data-id="' + index + '">' + element.nameEN + '</span>');
                     $('#modelIMG').remove();
-                    $('.scooter-images').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
+                    $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
                 } else {
                     $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
                 }
@@ -106,8 +106,8 @@ let Seacraft = {
                 $('.models').find('.model__active').removeClass('model__active');
                 $(this).addClass('model__active');
                 Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
-                $('.scooter-images').empty();
-                $('.scooter-images').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
+                $('#model').empty();
+                $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
             });
             $('.button').click(function () {
                 $('.scooter-points').find('.active-btn').removeClass('active-btn');
@@ -135,7 +135,7 @@ let Seacraft = {
                                 brackets[0].push(el);
                             }
                             $('<div />', {
-                                "class": 'accessories__items',
+                                "class": 'accessories__items ' + (el.bracket == true ? 'bracket' : 'acc'),
                                 'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories1');
@@ -145,7 +145,7 @@ let Seacraft = {
                                 brackets[1].push(el);
                             }
                             $('<div />', {
-                                "class": 'accessories__items',
+                                "class": 'accessories__items ' + (el.bracket == true ? 'bracket' : 'acc'),
                                 'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories2');
@@ -155,7 +155,7 @@ let Seacraft = {
                                 brackets[2].push(el);
                             }
                             $('<div />', {
-                                "class": 'accessories__items',
+                                "class": 'accessories__items ' + (el.bracket == true ? 'bracket' : 'acc'),
                                 'data-id': el.id,
                                 "html": acs,
                             }).appendTo('#accessories3');
@@ -166,65 +166,159 @@ let Seacraft = {
             $('.accessories__items').click(function () {
                 if ($(this).hasClass('active-access')) {
                     $(this).removeClass('active-access');
-                    Seacraft.accessories.choise($(this), $(this).parent().attr('data-access'));
+                    Seacraft.accessories.choise1($(this).parent().attr('data-access'), $(this).attr('data-id'), false);
                 } else {
-                    $('#' + $(this).parent().attr('id')).find('.active-access').removeClass('active-access');
                     $(this).addClass('active-access');
-                    Seacraft.accessories.choise($(this), $(this).parent().attr('data-access'), $(this).attr('data-id'));
+                    Seacraft.accessories.choise1($(this).parent().attr('data-access'), $(this).attr('data-id'), true, $(this));
                 }
             });
         },
-        choise: function (elem, point, id = null, type = null) {
-            $('.accessory' + point + 'IMG').remove();
+        choise1: function (point, id, type = true, elems = null, tool = true) {
+            //type: true-add, false-remove, tool is for access with required brackets: when true - get tooltip/false-remove all access at this point
             let myAccessry = acces.find(obj => {
                 return obj.id == id
             });
-            if (id != null) {
-                if (myAccessry.bracket == true || myAccessry.withBracket == false || brackets[point - 1].length < 2) {
-                    $('.scooter-images').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/point' + point + '/' + myAccessry.img + '.png' }));
+            if (type == false) {
+                if (myAccessry.bracket == true) {
+                    $('.bracket' + point + 'IMG' + '[data-id=' + id + ']').remove();
+                    let elem = $('#accesory').find('.accessory' + point + 'IMG');
+                    $('.accessory' + point + 'IMG').remove();
+                    for (let i = 0; i < elem.length; i++) {
+                        Seacraft.accessories.choise1(point, $(elem[i]).attr('data-id'), true, elems, false);
+                    }
                 } else {
-                    let htmlTool = '<div class="title-tool">Select a bracket</div>';
-                    brackets[point - 1].forEach((el) => {
-                        htmlTool += '<div class="accessories__items itemsTool" data-id="' + el.id + '"><div class="items-image"><img src="./assets/images/accessory/icons/' + el.img + '.png" alt=""></div><div div class="items-name"><span>' + el.nameEN + '</span></div></div>';
-                    });
-                    htmlTool += '';
-                    tippy(elem[0], {
-                        arrow: false,
-                        content: htmlTool,
-                        trigger: 'click',
-                        // hideOnClick: true,
-                        showOnCreate: true,
-                        interactive: true,
-                        maxWidth: 'none',
-                        allowHTML: true,
-                        appendTo: () => $('.mainblock__accessories')[0],
-                        placement: 'top',
-                        zIndex: 9999,
-                        onHidden(instance) {
-                            $(".mainblock__accessories").find(`[data-tippy-root]`).remove();
-                            elem[0]._tippy.destroy();
-                        },
-                        onClickOutside() {
-                            elem.removeClass('active-access');
-                            elem[0]._tippy.destroy();
-                            Seacraft.accessories.choise(elem, point);
-                        },
-                    });
-                    $('.itemsTool').click(function () {
-                        elem[0]._tippy.destroy();
-                        $(".mainblock__accessories").find(`[data-tippy-root]`).remove();
-                        $('.accessory' + point + 'IMG').remove();
-                        Seacraft.accessories.withBracket(point, $(this).attr('data-id'));
-                        Seacraft.accessories.withBracket(point, id);
-                    });
+                    $('.accessory' + point + 'IMG' + '[data-id=' + id + ']').remove();
                 }
+            } else {
+                if (myAccessry.bracket == true) {
+                    $('#' + $(elems).parent().attr('id')).find('.bracket').removeClass('active-access');
+                    $('.bracket' + point + 'IMG').remove();
+                    $(elems).addClass('active-access');
+                    $('#bracket').append($('<img>', { class: 'bracket' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/bracket/point' + point + '/' + myAccessry.img + '.png' }));
+                    let elem = $('#accesory').find('.accessory' + point + 'IMG');
+                    $('.accessory' + point + 'IMG').remove();
+                    for (let i = 0; i < elem.length; i++) {
+                        Seacraft.accessories.choise1(point, $(elem[i]).attr('data-id'), true, elems);
+                    }
+                } else {
+                    if (myAccessry.withBracket == false) {
+                        $('.bracket' + point + 'IMG').remove();
+                    } else if (myAccessry.withBracket == true) {
+                        if ($('.bracket' + point + 'IMG').length < 1) {
+                            if (tool == false) {
+                                $('#accessories' + point).find('.acc[data-id=' + myAccessry.id + ']').removeClass('active-access');
+                                $('.accessory' + point + 'IMG' + '[data-id=' + myAccessry.id + ']').remove();
+                            } else {
+                                let htmlTool = '<div class="title-tool">Select a bracket first for this accessory</div>';
+                                tippy(elems[0], {
+                                    arrow: false,
+                                    content: htmlTool,
+                                    trigger: 'click',
+                                    hideOnClick: true,
+                                    showOnCreate: true,
+                                    interactive: true,
+                                    maxWidth: 'none',
+                                    allowHTML: true,
+                                    appendTo: () => $('.mainblock__accessories')[0],
+                                    placement: 'top',
+                                    zIndex: 9999,
+                                    onHidden(instance) {
+                                        $(".mainblock__accessories").find(`[data-tippy-root]`).remove();
+                                        elems[0]._tippy.destroy();
+                                    },
+                                    onClickOutside() {
+                                        $(elems[0]).removeClass('active-access');
+                                        elems[0]._tippy.destroy();
+                                    },
+                                });
+                            }
+                            return;
+                        }
+                    }
+                    let elem = $('#accesory').find('.accessory' + point + 'IMG');
+                    let path = '';
+                    if ($('.bracket' + point + 'IMG').length > 0) {
+                        path = '/bracket/';
+                    } else {
+                        path = '/';
+                    }
+                    let counter = 0;
+                    if (elem.length > 0) {
+                        for (let i = 0; i < elem.length; i++) {
+                            let myAccess = acces.find(obj => {
+                                return obj.id == elem[i].dataset.id
+                            });
+                            if (myAccess.mix.includes(Number(id)) || myAccess.id == id) {
+                                counter++;
+                            }
+                        }
+                        if (counter == elem.length) {
+                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                        } else {
+                            $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
+                            $(elems).addClass('active-access');
+                            $('#accesory .accessory' + point + 'IMG').remove();
+                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                        }
+                    } else {
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                    }
+                }
+            } if (myAccessry.with.length > 0) {
+                myAccessry.with.forEach((el) => {
+                    let secondAccess = acces.find(obj => {
+                        return obj.id == el
+                    }); console.log(secondAccess);
+                    if (secondAccess.point1 == '1') {
+                        Seacraft.accessories.choiseWithSecond(1, el, type);
+                    } else if (secondAccess.point2 == '1') {
+                        Seacraft.accessories.choiseWithSecond(2, el, type);
+                    } else {
+                        Seacraft.accessories.choiseWithSecond(3, el, type);
+                    }
+                });
             }
         },
-        withBracket: function (point, id) {
+        choiseWithSecond: function (point, id, type = true, elems = null, tool = true) {
             let myAccessry = acces.find(obj => {
                 return obj.id == id
             });
-            $('.scooter-images').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/point' + point + '/' + myAccessry.img + '.png' }));
+            if (type == true) {
+                $('#accessories' + point).find('.acc[data-id=' + id + ']').addClass('active-access');
+                let elem = $('#accesory').find('.accessory' + point + 'IMG');
+                let path = '';
+                if ($('.bracket' + point + 'IMG').length > 0) {
+                    path = '/bracket/';
+                } else {
+                    path = '/';
+                }
+                let counter = 0;
+                if (elem.length > 0) {
+                    for (let i = 0; i < elem.length; i++) {
+                        let myAccess = acces.find(obj => {
+                            return obj.id == elem[i].dataset.id
+                        });
+                        if (myAccess.mix.includes(Number(id)) || myAccess.id == id) {
+                            counter++;
+                        } else {
+                            $('#accessories' + point).find('.acc[data-id=' + elem[i].dataset.id + ']').removeClass('active-access');
+                        }
+                    }
+                    if (counter == elem.length) {
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                    } else {
+                        $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
+                        $(elems).addClass('active-access');
+                        $('#accesory .accessory' + point + 'IMG').remove();
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                    }
+                } else {
+                    $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                }
+            } else {
+                $('#accessories' + point).find('.acc[data-id=' + id + ']').removeClass('active-access');
+                $('.accessory' + point + 'IMG' + '[data-id=' + id + ']').remove();
+            }
         },
     },
     howtouse: function () {
