@@ -243,6 +243,7 @@ let Seacraft = {
                         path = '/';
                     }
                     let counter = 0;
+                    let someAcc = $('#' + $(elems).parent().attr('id')).find('.active-access');
                     if (elem.length > 0) {
                         for (let i = 0; i < elem.length; i++) {
                             let myAccess = acces.find(obj => {
@@ -250,12 +251,16 @@ let Seacraft = {
                             });
                             if (myAccess.mix.includes(Number(id)) || myAccess.id == id) {
                                 counter++;
+                            } else {
+
+                                $('#accesory .accessory' + point + 'IMG[data-id=' + elem[i].dataset.id + ']').remove();
+
+                                $('#accessories' + point).find('.acc[data-id=' + elem[i].dataset.id + ']').removeClass('active-access');
                             }
                         }
                         if (counter == elem.length) {
                             $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                         } else {
-                            let someAcc = $('#' + $(elems).parent().attr('id')).find('.active-access');
                             for (let i = 0; i < someAcc.length; i++) {
                                 let zxc = acces.find(obj => {
                                     return obj.id == $(someAcc[i]).attr('data-id')
@@ -274,9 +279,9 @@ let Seacraft = {
                                     });
                                 }
                             }
-                            $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
+                            //$('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
                             $(elems).addClass('active-access');
-                            $('#accesory .accessory' + point + 'IMG').remove();
+                            //$('#accesory .accessory' + point + 'IMG').remove();
                             $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                         }
                     } else {
