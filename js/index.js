@@ -255,6 +255,25 @@ let Seacraft = {
                         if (counter == elem.length) {
                             $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                         } else {
+                            let someAcc = $('#' + $(elems).parent().attr('id')).find('.active-access');
+                            for (let i = 0; i < someAcc.length; i++) {
+                                let zxc = acces.find(obj => {
+                                    return obj.id == $(someAcc[i]).attr('data-id')
+                                }); if (zxc.with.length > 0) {
+                                    zxc.with.forEach((el) => {
+                                        let abc = acces.find(obj => {
+                                            return obj.id == el
+                                        });
+                                        if (abc.point1 == '1') {
+                                            Seacraft.accessories.choiseWithSecond(1, el, false);
+                                        } else if (abc.point2 == '1') {
+                                            Seacraft.accessories.choiseWithSecond(2, el, false);
+                                        } else {
+                                            Seacraft.accessories.choiseWithSecond(3, el, false);
+                                        }
+                                    });
+                                }
+                            }
                             $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
                             $(elems).addClass('active-access');
                             $('#accesory .accessory' + point + 'IMG').remove();
@@ -268,7 +287,7 @@ let Seacraft = {
                 myAccessry.with.forEach((el) => {
                     let secondAccess = acces.find(obj => {
                         return obj.id == el
-                    }); console.log(secondAccess);
+                    });
                     if (secondAccess.point1 == '1') {
                         Seacraft.accessories.choiseWithSecond(1, el, type);
                     } else if (secondAccess.point2 == '1') {
