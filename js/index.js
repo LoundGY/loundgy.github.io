@@ -107,6 +107,8 @@ let Seacraft = {
                 $(this).addClass('model__active');
                 Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
                 $('#model').empty();
+                $('#bracket').empty();
+                $('#accesory').empty();
                 $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
             });
             $('.button').click(function () {
