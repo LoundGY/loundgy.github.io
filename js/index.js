@@ -326,9 +326,19 @@ let Seacraft = {
                     if (counter == elem.length) {
                         $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                     } else {
+
+                        let someAcc = $('#accesory .accessory' + point + 'IMG');
+
+                        for (let i = 0; i < someAcc.length; i++) {
+                            if (!myAccessry.mix.includes(Number($(someAcc[i]).attr('data-id')))) {
+                                $('#accesory .accessory' + point + 'IMG[data-id=' + $(someAcc[i]).attr('data-id') + ']').remove();
+                            }
+                        }
+
+
                         $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
                         $(elems).addClass('active-access');
-                        $('#accesory .accessory' + point + 'IMG').remove();
+
                         $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                     }
                 } else {
