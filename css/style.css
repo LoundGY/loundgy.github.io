@@ -643,6 +643,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 @media (max-width: 1320px) {
   .mainBlock__scooter {
     left: 0;
+    width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
