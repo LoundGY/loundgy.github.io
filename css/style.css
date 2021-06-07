@@ -608,7 +608,6 @@ ul.selectboxssmenu > li.selectoption:hover {
   cursor: pointer;
   line-height: 25px;
   font-weight: 500;
-  border-bottom: 3px solid #fcc202;
 }
 
 @media (max-width: 705px) {
@@ -620,7 +619,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 .mainBlock__scooter .reset:hover {
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .mainBlock__scooter .reset:active {
