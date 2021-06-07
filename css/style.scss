@@ -102,6 +102,7 @@ ul.selectboxssmenu > li.selectoption:hover {
     width: 1320px;
     margin: auto;
     margin-top: 40px;
+    zoom: 80%;
     &__head {
         display: flex;
         flex-wrap: wrap;
@@ -403,7 +404,7 @@ ul.selectboxssmenu > li.selectoption:hover {
             cursor: pointer;
             line-height: 25px;
             font-weight: 500;
-            border-bottom: 3px solid #FCC202;
+            border-bottom: 3px solid #fcc202;
             @media (max-width: 705px) {
                 height: 20px;
                 line-height: 20px;
@@ -455,6 +456,7 @@ ul.selectboxssmenu > li.selectoption:hover {
         }
     }
     @media (max-width: 1320px) {
+        zoom: 100%;
         width: 700px;
     }
     @media (max-width: 705px) {
