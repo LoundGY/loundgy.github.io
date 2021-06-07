@@ -602,28 +602,24 @@ ul.selectboxssmenu > li.selectoption:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  width: 209px;
-  height: 58px;
-  background: #ffffff;
+  width: 61px;
+  height: 25px;
   cursor: pointer;
-  line-height: 58px;
+  line-height: 25px;
   font-weight: 500;
-  border-radius: 39px;
-  -webkit-box-shadow: 0px 0px 7px #838282;
-          box-shadow: 0px 0px 7px #838282;
+  border-bottom: 3px solid #FCC202;
 }
 
 @media (max-width: 705px) {
   .mainBlock__scooter .reset {
-    width: 101px;
-    height: 44px;
-    line-height: 44px;
-    font-size: 13px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
   }
 }
 
 .mainBlock__scooter .reset:hover {
-  background: #f1f0f0;
+  font-weight: 600;
 }
 
 .mainBlock__scooter .reset:active {
