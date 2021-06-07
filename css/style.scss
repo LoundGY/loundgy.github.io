@@ -394,6 +394,31 @@ ul.selectboxssmenu > li.selectoption:hover {
                 top: 0;
             }
         }
+        .reset {
+            margin: 24px auto;
+            text-align: center;
+            user-select: none;
+            width: 209px;
+            height: 58px;
+            background: #ffffff;
+            cursor: pointer;
+            line-height: 58px;
+            font-weight: 500;
+            border-radius: 39px;
+            box-shadow: 0px 0px 7px #838282;
+            @media (max-width: 705px) {
+                width: 101px;
+                height: 44px;
+                line-height: 44px;
+                font-size: 13px;
+            }
+        }
+        .reset:hover {
+            background: #f1f0f0;
+        }
+        .reset:active {
+            transform: scale(0.9);
+        }
         .button {
             text-align: center;
             user-select: none;

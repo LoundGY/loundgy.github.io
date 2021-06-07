@@ -101,7 +101,11 @@ let Seacraft = {
                     $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
                 }
             });
-
+            $('#reset').click(function () {
+                $('#bracket').empty();
+                $('#accesory').empty();
+                $('.accessories').find('.accessories__items').removeClass('active-access')
+            });
             $('.model__title').click(function () {
                 $('.models').find('.model__active').removeClass('model__active');
                 $(this).addClass('model__active');
