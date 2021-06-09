@@ -376,7 +376,7 @@ ul.selectboxssmenu > li.selectoption:hover {
           justify-content: space-between;
   width: 608px;
   font-weight: 500;
-  height: 130px;
+  height: 184px;
 }
 
 .mainBlock__parameters .right .weight {
@@ -401,6 +401,41 @@ ul.selectboxssmenu > li.selectoption:hover {
   line-height: 22px;
   width: 100%;
   height: 22px;
+}
+
+.mainBlock__parameters .right .foam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  line-height: 22px;
+  width: 100%;
+  height: 22px;
+}
+
+.mainBlock__parameters .right .foam .foam-parts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  line-height: 22px;
+  height: 22px;
+  position: absolute;
+  color: #000000;
+  left: 213px;
+}
+
+@media (max-width: 705px) {
+  .mainBlock__parameters .right .foam .foam-parts {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    left: 165px;
+  }
+}
+
+.mainBlock__parameters .right .foam__with {
+  margin-right: 10px;
+  color: #707070;
 }
 
 .mainBlock__parameters .right__span {
