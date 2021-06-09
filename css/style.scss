@@ -295,12 +295,15 @@ ul.selectboxssmenu > li.selectoption:hover {
                         flex-wrap: wrap;
                         left: 165px;
                     }
+                    img{
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
                 }
                 &__quan {
                 }
 
                 &__with {
-                    margin-right: 10px;
                     color: #707070;
                 }
             }

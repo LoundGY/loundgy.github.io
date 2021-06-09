@@ -435,8 +435,12 @@ ul.selectboxssmenu > li.selectoption:hover {
   }
 }
 
-.mainBlock__parameters .right .foam__with {
+.mainBlock__parameters .right .foam .foam-parts img {
+  margin-left: 10px;
   margin-right: 10px;
+}
+
+.mainBlock__parameters .right .foam__with {
   color: #707070;
 }
 
