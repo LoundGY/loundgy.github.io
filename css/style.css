@@ -408,6 +408,8 @@ ul.selectboxssmenu > li.selectoption:hover {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   line-height: 22px;
   width: 100%;
   height: 22px;
