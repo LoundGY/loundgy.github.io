@@ -436,6 +436,7 @@ ul.selectboxssmenu > li.selectoption:hover {
 }
 
 .mainBlock__parameters .right .foam .foam-parts img {
+  height: 22px;
   margin-left: 10px;
   margin-right: 10px;
 }
