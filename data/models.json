@@ -3,7 +3,8 @@
     "nameEN": "FUTURE",
     "namePL": "FUTURE",
     "img": "../../assets/images/scooters/1.png",
-    "weight": "Dog",
+    "weight": "15.90",
+    "weightInWater": "15.93",
     "accessories": [
       1,
       2,
@@ -22,7 +23,8 @@
     "nameEN": "GHOST",
     "namePL": "GHOST",
     "img": "../../assets/images/scooters/2.png",
-    "weight": "Dog",
+    "weight": "22.90",
+    "weightInWater": "22.94",
     "accessories": [
       5,
       7,
