@@ -76,7 +76,7 @@ let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
         let water = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaSalt').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
-        let volume = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) * Number(water) / 1000;
+        let scooter_buoyancy = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) * Number(water) / 1000;
         let acc_weight = 0;
         let acc_buoyancy = 0;
         let acs = $('#accesory').find('img');
@@ -88,17 +88,22 @@ let Seacraft = {
                 return obj.id == $(acs[i]).attr('data-id');
             });
             acc_weight += Number(myAccessry.weight);
-            acc_buoyancy+=Number(myAccessry.buoyancyFresh);
+            acc_buoyancy += Number(myAccessry.buoyancyFresh);
         }
         for (let i = 0; i < brs.length; i++) {
             let myAccessry = acces.find(obj => {
                 return obj.id == $(brs[i]).attr('data-id');
             });
             acc_weight += Number(myAccessry.weight);
-            acc_buoyancy+=Number(myAccessry.buoyancyFresh);
+            acc_buoyancy += Number(myAccessry.buoyancyFresh);
         }
-        console.log(acc_weight);
-        console.log(acc_buoyancy);
+        let per_value = 0;
+        if (Number(acc_buoyancy) === 0 || Number(acc_weight) === 0) {
+            per_value = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) / Number(scooter_buoyancy);
+        } else {
+            per_value = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) / Number(scooter_buoyancy) + Number(acc_weight) / Number(acc_buoyancy);
+        }
+        $('#current-buouancy').text(per_value.toFixed(2));
     },
     sea: {
         load: function () {
@@ -109,12 +114,15 @@ let Seacraft = {
             $("#currentSea").change(function () {
                 $('#seaSalt').val(seas[$("#currentSea").attr('data-seaId')].salt);
                 $('#seaTemp').val(seas[$("#currentSea").attr('data-seaId')].temperature);
+                Seacraft.countBuoyancy();
             });
             $('#seaSalt').change(function () {
                 $("#currentSea").val(seas[seas.length - 1].nameEN);
+                Seacraft.countBuoyancy();
             });
             $('#seaTemp').change(function () {
                 $("#currentSea").val(seas[seas.length - 1].nameEN);
+                Seacraft.countBuoyancy();
             });
             $('li.selectoption[data-seaId=7]').click();
         },
@@ -127,6 +135,7 @@ let Seacraft = {
                     $('#modelIMG').remove();
                     $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
                     $('#scooter-weight').text(models[$('.models').find('.model__active').attr('data-id')].weight);
+                    Seacraft.countBuoyancy();
                 } else {
                     $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
                 }
@@ -134,18 +143,19 @@ let Seacraft = {
             $('#reset').click(function () {
                 $('#bracket').empty();
                 $('#accesory').empty();
-                $('.accessories').find('.accessories__items').removeClass('active-access')
+                $('.accessories').find('.accessories__items').removeClass('active-access');
+                Seacraft.countBuoyancy();
             });
             $('.model__title').click(function () {
                 $('.models').find('.model__active').removeClass('model__active');
                 $(this).addClass('model__active');
-                Seacraft.countBuoyancy();
                 Seacraft.accessories.load($('.models').find('.model__active').attr('data-id'));
                 $('#model').empty();
                 $('#bracket').empty();
                 $('#accesory').empty();
                 $('#scooter-weight').text(models[$('.models').find('.model__active').attr('data-id')].weight);
                 $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
+                Seacraft.countBuoyancy();
             });
             $('.button').click(function () {
                 $('.scooter-points').find('.active-btn').removeClass('active-btn');
@@ -205,9 +215,11 @@ let Seacraft = {
                 if ($(this).hasClass('active-access')) {
                     $(this).removeClass('active-access');
                     Seacraft.accessories.choise1($(this).parent().attr('data-access'), $(this).attr('data-id'), false);
+                    Seacraft.countBuoyancy();
                 } else {
                     $(this).addClass('active-access');
                     Seacraft.accessories.choise1($(this).parent().attr('data-access'), $(this).attr('data-id'), true, $(this));
+                    Seacraft.countBuoyancy();
                 }
             });
         },
@@ -447,10 +459,8 @@ let Seacraft = {
         });
     },
     init: function () {
-
-        Seacraft.sea.load();
         Seacraft.scooter.load();
-
+        Seacraft.sea.load();
         $('#howtouse').click(function () {
             Seacraft.howtouse();
         });
