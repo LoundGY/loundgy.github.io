@@ -646,7 +646,7 @@ ul.selectboxssmenu > li.selectoption:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  width: 61px;
+  width: 105px;
   height: 25px;
   cursor: pointer;
   line-height: 25px;
