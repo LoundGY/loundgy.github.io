@@ -1,7 +1,6 @@
 
 (function ($) {
     $.fn.selectbox = function () {
-        console.log('q');
         let selectDefaultHeight = $('.selectboxss').height();
         let menuHeight = $('.selectboxssmenu').height() + 36;
         $('.selectboxss .selectboxssvalue').click(function () {
@@ -75,14 +74,13 @@ let currentBuoyancy = 0;
 let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
-        let water = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaSalt').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
-        let scooter_buoyancy = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) * Number(water) / 1000;
+        let waterDensity = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
+        let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater;
+        let scooter_buoyancy = Number(scooter_weightInWater) * Number(waterDensity) / 1000;
         let acc_weight = 0;
         let acc_buoyancy = 0;
         let acs = $('#accesory').find('img');
         let brs = $('#bracket').find('img');
-        console.log(acs);
-        console.log(brs);
         for (let i = 0; i < acs.length; i++) {
             let myAccessry = acces.find(obj => {
                 return obj.id == $(acs[i]).attr('data-id');
@@ -97,13 +95,21 @@ let Seacraft = {
             acc_weight += Number(myAccessry.weight);
             acc_buoyancy += Number(myAccessry.buoyancyFresh);
         }
-        let per_value = 0;
-        if (Number(acc_buoyancy) === 0 || Number(acc_weight) === 0) {
-            per_value = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) / Number(scooter_buoyancy);
-        } else {
-            per_value = Number(models[$('.models').find('.model__active').attr('data-id')].weightInWater) / Number(scooter_buoyancy) + Number(acc_weight) / Number(acc_buoyancy);
+        acc_buoyancy *= (waterDensity / 1000);
+        let scooter_weight_with_acces = (Number(scooter_weightInWater) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
+        let currentBuoy = scooter_weight_with_acces - scooter_buoyancy_with_acces;
+        $('#current-buouancy').text(Math.round(currentBuoy));
+        let internalBallastToAdd = currentBuoy;
+        let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 234;
+        let internal3mmPlates = Math.trunc(internalBallastToAdd / Internal3mmPlateWeight);
+        let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
+        if (currentBuoy > 0 && currentBuoy <= 100) {
+            let h2 = -105, h3 = 20;
+            //console.log(Math.min(3, Math.round(-currentBuoy + (h3 / (h2 / 3)))));
+            console.log((h3 / (h2 / 3)));
         }
-        $('#current-buouancy').text(per_value.toFixed(2));
+        $('#detail61').text(internal1mmPlates);
+        $('#detail200').text(internal3mmPlates);
     },
     sea: {
         load: function () {

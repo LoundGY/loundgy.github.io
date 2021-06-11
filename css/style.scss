@@ -306,6 +306,9 @@ ul.selectboxssmenu > li.selectoption:hover {
 
                 &__with {
                     color: #707070;
+                    @media (max-width: 705px) {
+                        width: 80px;
+                    }
                 }
             }
 
