@@ -111,11 +111,17 @@ let Seacraft = {
             }
 
             //console.log(Math.min(3, Math.round(-currentBuoy + (h3 / (h2 / 3)))));
-            $('#foam-quan').text(foamPieces);
-            $('#foam-weight').text(35 * foamPieces - 20);
+            if (foamPieces > 0) {
+                $('#foam-block').html("");
+                $('#foam-block').append('<span>Or add:</span><div class="foam-parts"><div class="foam__quan"><span id="foam-weight"></span>g (<span id="foam-quan"></span>/3)</div><img src="./assets/images/icons/foam.png" alt=""><div class="foam__with">foam with</div><img src="./assets/images/icons/belt.png" alt=""></div>');
+
+                $('#foam-quan').text(foamPieces);
+                $('#foam-weight').text(35 * foamPieces - 20);
+            } else {
+                $('#foam-block').html("");
+            }
         } else {
-            $('#foam-quan').text(0);
-            $('#foam-weight').text(0);
+            $('#foam-block').html("");
         }
         $('#detail61').text(internal1mmPlates);
         $('#detail200').text(internal3mmPlates);
