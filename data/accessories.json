@@ -190,9 +190,9 @@
 		"withBracket": "differently",
 		"nameEN": "GoPro Hero 7 black with 40m case",
 		"namePL": "",
-		"weight": "0",
-		"buoyancyFresh": "0",
-		"weightFresh": "0",
+		"weight": "210",
+		"buoyancyFresh": "150",
+		"weightFresh": "60",
 		"mix": [
 			6,
 			7,
