@@ -98,15 +98,24 @@ let Seacraft = {
         acc_buoyancy *= (waterDensity / 1000);
         let scooter_weight_with_acces = (Number(scooter_weightInWater) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
         let currentBuoy = scooter_weight_with_acces - scooter_buoyancy_with_acces;
-        $('#current-buouancy').text(Math.round(currentBuoy));
+        $('#current-buouancy').text(Math.round(-currentBuoy));
         let internalBallastToAdd = currentBuoy;
         let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 234;
         let internal3mmPlates = Math.trunc(internalBallastToAdd / Internal3mmPlateWeight);
         let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
         if (currentBuoy > 0 && currentBuoy <= 100) {
-            let h2 = -105, h3 = 20;
+            let foamSetNetWeight = 105, seacraftBeltNetWeight = 20;
+            let foamPieces = Math.abs(Math.round(- (currentBuoy + seacraftBeltNetWeight) / (foamSetNetWeight / 3)));  //C65
+            if (foamPieces > 3) {
+                foamPieces = 3;
+            }
+
             //console.log(Math.min(3, Math.round(-currentBuoy + (h3 / (h2 / 3)))));
-            console.log((h3 / (h2 / 3)));
+            $('#foam-quan').text(foamPieces);
+            $('#foam-weight').text(35 * foamPieces - 20);
+        } else {
+            $('#foam-quan').text(0);
+            $('#foam-weight').text(0);
         }
         $('#detail61').text(internal1mmPlates);
         $('#detail200').text(internal3mmPlates);
