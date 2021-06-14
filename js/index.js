@@ -75,9 +75,11 @@ let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
         let waterDensity = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
-        let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater;
+        let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater,
+            scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight;
         let scooter_buoyancy = Number(scooter_weightInWater) * Number(waterDensity) / 1000;
-        let acc_weight = 0;
+        let newValue = (Number(-scooter_buoyancy) + Number(scooter_weight)) * 1000;
+        let acc_weight = 0; console.log(newValue);
         let acc_buoyancy = 0;
         let acs = $('#accesory').find('img');
         let brs = $('#bracket').find('img');
@@ -137,12 +139,27 @@ let Seacraft = {
                 $('#seaTemp').val(seas[$("#currentSea").attr('data-seaId')].temperature);
                 Seacraft.countBuoyancy();
             });
+            let minSalt = 0, maxSalt = 40, minTemp = 0, maxTemp = 35;
             $('#seaSalt').change(function () {
                 $("#currentSea").val(seas[seas.length - 1].nameEN);
+                if ($('#seaSalt').val() > maxSalt) {
+                    $('#seaSalt').val(maxSalt);
+                } else if ($('#seaSalt').val() < minSalt) {
+                    $('#seaSalt').val(minSalt);
+                } else if (isNaN($('#seaSalt').val())) {
+                    $('#seaSalt').val(minSalt);
+                }
                 Seacraft.countBuoyancy();
             });
             $('#seaTemp').change(function () {
                 $("#currentSea").val(seas[seas.length - 1].nameEN);
+                if ($('#seaTemp').val() > maxTemp) {
+                    $('#seaTemp').val(maxTemp);
+                } else if ($('#seaTemp').val() < minTemp) {
+                    $('#seaTemp').val(minTemp);
+                } else if (isNaN($('#seaTemp').val())) {
+                    $('#seaTemp').val(minTemp);
+                }
                 Seacraft.countBuoyancy();
             });
             $('li.selectoption[data-seaId=7]').click();
