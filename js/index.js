@@ -75,8 +75,8 @@ let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
         let waterDensity = 1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35);
-        let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater,
-            scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight;
+        let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater*1000,
+            scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight*1000;
         let scooter_buoyancy = Number(scooter_weightInWater) * Number(waterDensity) / 1000;
         let c23 = (Number(-scooter_buoyancy) + Number(scooter_weight)) * 1000;
         let acc_weight = 0; console.log(c23);
@@ -99,7 +99,7 @@ let Seacraft = {
         }
         acc_buoyancy *= (waterDensity / 1000);
         let scooter_weight_with_acces = (Number(scooter_weightInWater) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
-        let currentBuoy = (scooter_weight_with_acces - scooter_buoyancy_with_acces)*1000;
+        let currentBuoy = (scooter_weight_with_acces - scooter_buoyancy_with_acces);
         $('#current-buouancy').text(Math.round(-currentBuoy));
         let internalBallastToAdd = -currentBuoy;
         let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 201;
