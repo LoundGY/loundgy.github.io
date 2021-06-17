@@ -74,12 +74,12 @@ let currentBuoyancy = 0;
 let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
-        let waterDensity = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
+        let waterDensity = 1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35);
         let scooter_weightInWater = models[$('.models').find('.model__active').attr('data-id')].weightInWater,
             scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight;
         let scooter_buoyancy = Number(scooter_weightInWater) * Number(waterDensity) / 1000;
-        let newValue = (Number(-scooter_buoyancy) + Number(scooter_weight)) * 1000;
-        let acc_weight = 0; console.log(newValue);
+        let c23 = (Number(-scooter_buoyancy) + Number(scooter_weight)) * 1000;
+        let acc_weight = 0; console.log(c23);
         let acc_buoyancy = 0;
         let acs = $('#accesory').find('img');
         let brs = $('#bracket').find('img');
@@ -99,20 +99,20 @@ let Seacraft = {
         }
         acc_buoyancy *= (waterDensity / 1000);
         let scooter_weight_with_acces = (Number(scooter_weightInWater) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
-        let currentBuoy = scooter_weight_with_acces - scooter_buoyancy_with_acces;
+        let currentBuoy = (scooter_weight_with_acces - scooter_buoyancy_with_acces)*1000;
         $('#current-buouancy').text(Math.round(-currentBuoy));
-        let internalBallastToAdd = currentBuoy;
-        let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 234;
+        let internalBallastToAdd = -currentBuoy;
+        let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 201;
         let internal3mmPlates = Math.trunc(internalBallastToAdd / Internal3mmPlateWeight);
         let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
-        if (currentBuoy > 0 && currentBuoy <= 100) {
+        if (Math.round(currentBuoy) > 0 && Math.round(currentBuoy) <= 100) {
             let foamSetNetWeight = 105, seacraftBeltNetWeight = 20;
             let foamPieces = Math.abs(Math.round(- (currentBuoy + seacraftBeltNetWeight) / (foamSetNetWeight / 3)));  //C65
             if (foamPieces > 3) {
                 foamPieces = 3;
             }
 
-            //console.log(Math.min(3, Math.round(-currentBuoy + (h3 / (h2 / 3)))));
+            console.log(currentBuoy);
             if (foamPieces > 0) {
                 $('#foam-block').html("");
                 $('#foam-block').append('<span>Or add:</span><div class="foam-parts"><div class="foam__quan"><span id="foam-weight"></span>g (<span id="foam-quan"></span>/3)</div><img src="./assets/images/icons/foam.png" alt=""><div class="foam__with">foam with</div><img src="./assets/images/icons/belt.png" alt=""></div>');
@@ -125,8 +125,8 @@ let Seacraft = {
         } else {
             $('#foam-block').html("");
         }
-        $('#detail61').text(internal1mmPlates);
-        $('#detail200').text(internal3mmPlates);
+        $('#detail61').text(Math.abs(internal1mmPlates));
+        $('#detail200').text(Math.abs(internal3mmPlates));
     },
     sea: {
         load: function () {
