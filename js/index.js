@@ -75,7 +75,8 @@ let brackets = [[], [], []];
 let Seacraft = {
     countBuoyancy: function () {
         let waterDensity = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
-        let scooter_volume = (models[$('.models').find('.model__active').attr('data-id')].weight / 0.998).toFixed(2) * 1000;
+        let scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight * 1000,
+            scooter_volume = (models[$('.models').find('.model__active').attr('data-id')].weight / 0.998).toFixed(2) * 1000;
         let scooter_buoyancy = (Number(scooter_volume) * Number(waterDensity) / 1000).toFixed(2);
         let acc_weight = 0;
         let acc_buoyancy = 0;
@@ -96,14 +97,14 @@ let Seacraft = {
             acc_buoyancy += Number(myAccessry.buoyancyFresh);
         }
         acc_buoyancy *= (waterDensity / 1000);
-        let scooter_weight_with_acces = (Number(scooter_volume) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
+        let scooter_weight_with_acces = (Number(scooter_weight) + Number(acc_weight)), scooter_buoyancy_with_acces = (Number(scooter_buoyancy) + Number(acc_buoyancy));
         let currentBuoy = (scooter_weight_with_acces - scooter_buoyancy_with_acces);
-        $('#current-buouancy').text(Math.round(-currentBuoy));
+        $('#current-buouancy').text(Math.round(currentBuoy));
         let internalBallastToAdd = -currentBuoy;
         let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 201;
         let internal3mmPlates = Math.trunc(internalBallastToAdd / Internal3mmPlateWeight);
 
-        console.log(scooter_buoyancy);
+        console.log(scooter_weight);
 
 
         let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
@@ -124,13 +125,9 @@ let Seacraft = {
         } else {
             $('#foam-block').html("");
         }
-        if (Math.round(currentBuoy) > 0) {
-            $('#detail61').text(Math.abs(internal1mmPlates));
-            $('#detail200').text(Math.abs(internal3mmPlates));
-        } else {
-            $('#detail61').text(Math.abs(0));
-            $('#detail200').text(Math.abs(0));
-        }
+
+        $('#detail61').text(Math.abs(internal1mmPlates));
+        $('#detail200').text(Math.abs(internal3mmPlates));
 
     },
     sea: {
