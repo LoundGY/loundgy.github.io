@@ -1,46 +1,55 @@
 [
   {
-    "name": "Baltic sea",
+    "nameEN": "Baltic sea",
+    "namePL": "",
     "salt": "10",
     "temperature": "10"
   },
   {
-    "name": "Red sea",
+    "nameEN": "Red sea",
+    "namePL": "",
     "salt": "38",
     "temperature": "25"
   },
   {
-    "name": "Mediterranian sea",
+    "nameEN": "Mediterranian sea",
+    "namePL": "",
     "salt": "38",
     "temperature": "18"
   },
   {
-    "name": "Black Sea",
+    "nameEN": "Black Sea",
+    "namePL": "",
     "salt": "18",
     "temperature": "18"
   },
   {
-    "name": "World ocean",
+    "nameEN": "World ocean",
+    "namePL": "",
     "salt": "35",
     "temperature": "10"
   },
   {
-    "name": "Yellow Sea",
+    "nameEN": "Yellow Sea",
+    "namePL": "",
     "salt": "30",
     "temperature": "15"
   },
   {
-    "name": "Adriatic sea",
+    "nameEN": "Adriatic sea",
+    "namePL": "",
     "salt": "38",
     "temperature": "20"
   },
   {
-    "name": "Freshwater",
+    "nameEN": "Freshwater",
+    "namePL": "",
     "salt": "0",
     "temperature": "10"
   },
   {
-    "name": "Custom",
+    "nameEN": "Custom",
+    "namePL": "",
     "salt": "0",
     "temperature": "0"
   }

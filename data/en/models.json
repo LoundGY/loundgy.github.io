@@ -1,6 +1,7 @@
 [
   {
-    "name": "FUTURE",
+    "nameEN": "FUTURE",
+    "namePL": "FUTURE",
     "img": "../../assets/images/scooters/1.png",
     "weight": "15.75",
     "weightInWater": "15.78",
@@ -19,7 +20,8 @@
     ]
   },
   {
-    "name": "GHOST",
+    "nameEN": "GHOST",
+    "namePL": "GHOST",
     "img": "../../assets/images/scooters/2.png",
     "weight": "22.73",
     "weightInWater": "22.77",

@@ -76,8 +76,8 @@ let Seacraft = {
     countBuoyancy: function () {
         let waterDensity = Math.round(1000 + 28.152 - 0.0735 * Number($('#seaTemp').val()) - 0.00469 * Math.pow(Number($('#seaTemp').val()), 2) + (0.802 - 0.002 * Number($('#seaTemp').val())) * (Number($('#seaSalt').val()) - 35));
         let scooter_weight = models[$('.models').find('.model__active').attr('data-id')].weight * 1000,
-            scooter_volume = (models[$('.models').find('.model__active').attr('data-id')].weight / 0.998).toFixed(2) * 1000;
-        let scooter_buoyancy = (Number(scooter_volume) * Number(waterDensity) / 1000).toFixed(2);
+            scooter_volume = (models[$('.models').find('.model__active').attr('data-id')].weight / 0.998) * 1000;
+        let scooter_buoyancy = (Number(scooter_volume) * Number(waterDensity) / 1000);
         let acc_weight = 0;
         let acc_buoyancy = 0;
         let acs = $('#accesory').find('img');
@@ -125,7 +125,11 @@ let Seacraft = {
         } else {
             $('#foam-block').html("");
         }
-
+        if(Math.round(currentBuoy) > 0){
+            $('#ballastMove').text('Remove the ballast:');
+        }else{
+            $('#ballastMove').text('Add the ballast:');
+        }
         $('#detail61').text(Math.abs(internal1mmPlates));
         $('#detail200').text(Math.abs(internal3mmPlates));
 
@@ -133,7 +137,7 @@ let Seacraft = {
     sea: {
         load: function () {
             seas.forEach((element, index) => {
-                $('#seas').append('<li class="selectoption" data-seaId=' + index + '>' + element.nameEN + '</li>');
+                $('#seas').append('<li class="selectoption" data-seaId=' + index + '>' + element.name + '</li>');
             });
             $('.selectboxss').selectbox();
             $("#currentSea").change(function () {
@@ -143,7 +147,7 @@ let Seacraft = {
             });
             let minSalt = 0, maxSalt = 40, minTemp = 0, maxTemp = 35;
             $('#seaSalt').change(function () {
-                $("#currentSea").val(seas[seas.length - 1].nameEN);
+                $("#currentSea").val(seas[seas.length - 1].name);
                 if ($('#seaSalt').val() > maxSalt) {
                     $('#seaSalt').val(maxSalt);
                 } else if ($('#seaSalt').val() < minSalt) {
@@ -154,7 +158,7 @@ let Seacraft = {
                 Seacraft.countBuoyancy();
             });
             $('#seaTemp').change(function () {
-                $("#currentSea").val(seas[seas.length - 1].nameEN);
+                $("#currentSea").val(seas[seas.length - 1].name);
                 if ($('#seaTemp').val() > maxTemp) {
                     $('#seaTemp').val(maxTemp);
                 } else if ($('#seaTemp').val() < minTemp) {
@@ -171,13 +175,13 @@ let Seacraft = {
         load: function () {
             models.forEach((element, index) => {
                 if (index == 0) {
-                    $('#models').append('<span class="model__title model__active" data-id="' + index + '">' + element.nameEN + '</span>');
+                    $('#models').append('<span class="model__title model__active" data-id="' + index + '">' + element.name + '</span>');
                     $('#modelIMG').remove();
                     $('#model').append($('<img>', { id: 'modelIMG', src: models[$('.models').find('.model__active').attr('data-id')].img }));
                     $('#scooter-weight').text(models[$('.models').find('.model__active').attr('data-id')].weight);
                     Seacraft.countBuoyancy();
                 } else {
-                    $('#models').append('<span class="model__title" data-id="' + index + '">' + element.nameEN + '</span>');
+                    $('#models').append('<span class="model__title" data-id="' + index + '">' + element.name + '</span>');
                 }
             });
             $('#reset').click(function () {
@@ -217,7 +221,7 @@ let Seacraft = {
             models[modelID].accessories.forEach((element, index) => {
                 acces.forEach((el) => {
                     if (el.id == element) {
-                        let acs = '<div class="items-image"><img src="./assets/images/accessory/icons/' + el.img + '.png" alt=""></div><div div class="items-name"><span>' + el.nameEN + '</span></div>';
+                        let acs = '<div class="items-image"><img src="./assets/images/accessory/icons/' + el.img + '.png" alt=""></div><div div class="items-name"><span>' + el.name + '</span></div>';
                         if (el.point1 == "1") {
                             if (el.bracket == true) {
                                 brackets[0].push(el);
@@ -458,7 +462,7 @@ let Seacraft = {
         }).appendTo('.htuCard');
         $('<div />', {
             "class": 'htuCard__text',
-            "html": `<p>The Seacraft balance calculator was designed to assist you in determining the right trim for your PDV with and without accessories.
+            "html": `<p>The Seacraft balance calculator was designed to assist you in determining the right trim for your DPV with and without accessories.
             Please remember, that you DPV's trim depends on the salinityand temperature of the waters you are diving in, and on the positioning of the accessories. These factors are taken into account.</p>
             
             <p>Please note, that this calculator is based on some simple assumptions and maybe cannot simulate your specific configuration.

@@ -1,46 +1,46 @@
 [
   {
-    "name": "Baltic sea",
+    "name": "Ostsee",
     "salt": "10",
     "temperature": "10"
   },
   {
-    "name": "Red sea",
+    "name": "Rotes Meer",
     "salt": "38",
     "temperature": "25"
   },
   {
-    "name": "Mediterranian sea",
+    "name": "Mittelmeer",
     "salt": "38",
     "temperature": "18"
   },
   {
-    "name": "Black Sea",
+    "name": "Schwarzes Meer",
     "salt": "18",
     "temperature": "18"
   },
   {
-    "name": "World ocean",
+    "name": "Ozean",
     "salt": "35",
     "temperature": "10"
   },
   {
-    "name": "Yellow Sea",
+    "name": "Gelbes Meer",
     "salt": "30",
     "temperature": "15"
   },
   {
-    "name": "Adriatic sea",
+    "name": "Adria",
     "salt": "38",
     "temperature": "20"
   },
   {
-    "name": "Freshwater",
+    "name": "Süßwasser",
     "salt": "0",
     "temperature": "10"
   },
   {
-    "name": "Custom",
+    "name": "Individuell",
     "salt": "0",
     "temperature": "0"
   }
