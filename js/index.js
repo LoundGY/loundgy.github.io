@@ -125,10 +125,10 @@ let Seacraft = {
         } else {
             $('#foam-block').html("");
         }
-        if(Math.round(currentBuoy) > 0){
-            $('#ballastMove').text('Remove the ballast:');
-        }else{
-            $('#ballastMove').text('Add the ballast:');
+        if (Math.round(currentBuoy) > 0) {
+            $('#ballastMove').text('Add ballast:');
+        } else {
+            $('#ballastMove').text('Remove ballast:');
         }
         $('#detail61').text(Math.abs(internal1mmPlates));
         $('#detail200').text(Math.abs(internal3mmPlates));
