@@ -108,7 +108,7 @@ let Seacraft = {
 
 
         let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
-        if (Math.round(currentBuoy) > 0 && Math.round(currentBuoy) <= 100) {
+        if (Math.round(currentBuoy) < 0 && Math.round(currentBuoy) >= -100) {
             let foamSetNetWeight = 105, seacraftBeltNetWeight = 20;
             let foamPieces = Math.abs(Math.round(- (currentBuoy + seacraftBeltNetWeight) / (foamSetNetWeight / 3)));  //C65
             if (foamPieces > 3) {
