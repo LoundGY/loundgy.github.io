@@ -103,12 +103,8 @@ let Seacraft = {
         let internalBallastToAdd = -currentBuoy;
         let Internal1mmPlateWeight = 61, Internal3mmPlateWeight = 201;
         let internal3mmPlates = Math.trunc(internalBallastToAdd / Internal3mmPlateWeight);
-
-
-
-
         let internal1mmPlates = Math.round((internalBallastToAdd - (internal3mmPlates * Internal3mmPlateWeight)) / Internal1mmPlateWeight);
-        if (Math.round(currentBuoy) < 0 && Math.round(currentBuoy) >= -100) {
+        if (Math.round(currentBuoy) > 0 && Math.round(currentBuoy) <= 100) {
             let foamSetNetWeight = 105, seacraftBeltNetWeight = 20;
             let foamPieces = Math.abs(Math.round((-currentBuoy + seacraftBeltNetWeight) / (foamSetNetWeight / 3)));  //C65
             if (foamPieces > 3) {
@@ -125,7 +121,7 @@ let Seacraft = {
         } else {
             $('#foam-block').html("");
         }
-        if (Math.round(currentBuoy) > 0) {
+        if (Math.round(currentBuoy) < 0) {
             $('#ballastMove').text('Add ballast:');
         } else {
             $('#ballastMove').text('Remove ballast:');

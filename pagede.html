@@ -14,22 +14,22 @@
     <div class="header"></div>
     <div class="mainBlock">
         <div class="mainBlock__head">
-            <div class="title">Seacraft DPV balance calculator</div>
+            <div class="title">Seacraft Trimm-Planer </div>
             <div id="howtouse" class="howtouse">
-                <div class="howtouse__title">How to use the calculator?</div>
+                <div class="howtouse__title">Hinweise zur Verwendung</div>
                 <div class="howtouse__icon">?</div>
             </div>
         </div>
         <div class="mainBlock__parameters">
             <div class="left">
                 <div class="model">
-                    <span class="model__main">Model:</span>
+                    <span class="model__main">Modell:</span>
                     <div id="models" class="models">
                     </div>
 
                 </div>
                 <div class="waterParam">
-                    <span>Water parameters:</span>
+                    <span>Gewässerparameter:</span>
                     <div class="selectboxss">
                         <div class="selectboxssvalue"><input id="currentSea" readonly value="Water"></input><img
                                 src="./assets/images/icons/arrow.svg" class="arrowselect" />
@@ -40,26 +40,25 @@
                 </div>
                 <div class="params">
                     <div class="waterParameters">
-                        <span>Salt:</span><input id="seaSalt" class="waterParameters__input" type="text"><span>‰</span>
+                        <span>Salz:</span><input id="seaSalt" class="waterParameters__input" type="text"><span>‰</span>
                     </div>
                     <div class="waterParameters">
-                        <span>Temp.:</span><input id="seaTemp" class="waterParameters__input"
-                            type="text"><span>°C</span>
+                        <span>Temp.:</span><input id="seaTemp" class="waterParameters__input" type="text"><span>°C</span>
                     </div>
                 </div>
             </div>
             <div class="right">
-                <div class="weight">Dry weight of DPV:<span class="right__span"><span id="scooter-weight"></span>
-                        kg</span><span class="right__span2">(Neutral buoyancy in fresh water)</span></div>
-                <div class="buoyancy">Current buoyancy:<span class="right__span"><span id="current-buouancy"></span>
+                <div class="weight">Scooter-Gewicht an Land:<span class="right__span"><span id="scooter-weight"></span>
+                        kg</span><span class="right__span2">(Neutral getrimmt für Süßwasser)</span></div>
+                <div class="buoyancy">Aktueller Auftrieb:<span class="right__span"><span id="current-buouancy"></span>
                         g</span>
                 </div>
-                <div class="ballast"><span id="ballastMove">Remove ballast:</span>
+                <div class="ballast"><span>Gewichte entfernen:</span>
                     <div class="details">
                         <div class="detail"> <span class="right__span3"><span id="detail61"></span> x 61g</span><img
                                 src="./assets/images/icons/detail.svg" alt=""></div>
                         <div class="detail">
-                            <span class="right__span3"><span id="detail200"></span> x 201g</span><img
+                            <span class="right__span3"><span id="detail200"></span> x 234g</span><img
                                 src="./assets/images/icons/detail.svg" alt="">
                         </div>
                     </div>
@@ -78,15 +77,15 @@
             <div class="scooter-points">
                 <div class="title">Choose mounting point:</div>
                 <div class="buttons">
-                    <div class="button active-btn" data-point="1">Mounting point 1</div>
-                    <div class="button" data-point="2">Mounting point 2</div>
-                    <div class="button" data-point="3">Mounting point 3</div>
+                    <div class="button active-btn" data-point="1">Montagepunkt 1</div>
+                    <div class="button" data-point="2">Montagepunkt 2</div>
+                    <div class="button" data-point="3">Montagepunkt 3</div>
                 </div>
                 <div id="reset" class="reset">Reset all</div>
             </div>
         </div>
         <div class="mainblock__accessories">
-            <div class="title"> Accessories:</div>
+            <div class="title">Zubehör:</div>
             <div id="accessories1" data-access="1" class="accessories accessories_active" data-scrollbar>
             </div>
             <div id="accessories2" data-access="2" class="accessories" data-scrollbar>
