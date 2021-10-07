@@ -1,0 +1,39 @@
+[
+  {
+    "nameEN": "FUTURE",
+    "namePL": "FUTURE",
+    "img": "../../assets/images/scooters/1.png",
+    "weight": "15.75",
+    "weightInWater": "15.78",
+    "accessories": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  {
+    "nameEN": "GHOST",
+    "namePL": "GHOST",
+    "img": "../../assets/images/scooters/2.png",
+    "weight": "22.73",
+    "weightInWater": "22.77",
+    "accessories": [
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  }
+]
