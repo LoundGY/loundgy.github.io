@@ -1,7 +1,7 @@
 [
   {
     "name": "FUTURE",
-    "img": "../../assets/images/scooters/1.png",
+    "img": "../scooter-calc/assets/images/scooters/1.png",
     "weight": "15.75",
     "weightInWater": "15.78",
     "accessories": [
@@ -20,7 +20,7 @@
   },
   {
     "name": "GHOST",
-    "img": "../../assets/images/scooters/2.png",
+    "img": "../scooter-calc/assets/images/scooters/2.png",
     "weight": "22.73",
     "weightInWater": "22.77",
     "accessories": [

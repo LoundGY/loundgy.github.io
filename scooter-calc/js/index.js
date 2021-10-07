@@ -284,7 +284,7 @@ let Seacraft = {
                     $('#' + $(elems).parent().attr('id')).find('.bracket').removeClass('active-access');
                     $('.bracket' + point + 'IMG').remove();
                     $(elems).addClass('active-access');
-                    $('#bracket').append($('<img>', { class: 'bracket' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/bracket/point' + point + '/' + myAccessry.img + '.png' }));
+                    $('#bracket').append($('<img>', { class: 'bracket' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + '/bracket/point' + point + '/' + myAccessry.img + '.png' }));
                     let elem = $('#accesory').find('.accessory' + point + 'IMG');
                     $('.accessory' + point + 'IMG').remove();
                     for (let i = 0; i < elem.length; i++) {
@@ -349,7 +349,7 @@ let Seacraft = {
                             }
                         }
                         if (counter == elem.length) {
-                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                         } else {
                             for (let i = 0; i < someAcc.length; i++) {
                                 let zxc = acces.find(obj => {
@@ -372,10 +372,10 @@ let Seacraft = {
                             //$('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
                             $(elems).addClass('active-access');
                             //$('#accesory .accessory' + point + 'IMG').remove();
-                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                            $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                         }
                     } else {
-                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                     }
                 }
             } if (myAccessry.with.length > 0) {
@@ -419,7 +419,7 @@ let Seacraft = {
                         }
                     }
                     if (counter == elem.length) {
-                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                     } else {
 
                         let someAcc = $('#accesory .accessory' + point + 'IMG');
@@ -434,10 +434,10 @@ let Seacraft = {
                         $('#' + $(elems).parent().attr('id')).find('.acc').removeClass('active-access');
                         $(elems).addClass('active-access');
 
-                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                        $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                     }
                 } else {
-                    $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../../assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
+                    $('#accesory').append($('<img>', { class: 'accessory' + point + 'IMG', 'data-id': id, src: '../scooter-calc/assets/images/accessory/models/' + $('.models').find('.model__active').attr('data-id') + path + 'point' + point + '/' + myAccessry.img + '.png' }));
                 }
             } else {
                 $('#accessories' + point).find('.acc[data-id=' + id + ']').removeClass('active-access');
