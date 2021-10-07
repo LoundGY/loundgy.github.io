@@ -67,9 +67,9 @@ new PerfectScrollbar('#accessories2', {
     scrollingThreshold: 5000,
     wheelSpeed: 0.5,
 });
-const models = JSON.parse($.getJSON({ 'url': "../data/models.json", 'async': false }).responseText);
-const acces = JSON.parse($.getJSON({ 'url': "../data/accessories.json", 'async': false }).responseText);
-const seas = JSON.parse($.getJSON({ 'url': "../data/sea.json", 'async': false }).responseText);
+const models = JSON.parse($.getJSON({ 'url': "./data/models.json", 'async': false }).responseText);
+const acces = JSON.parse($.getJSON({ 'url': "./data/accessories.json", 'async': false }).responseText);
+const seas = JSON.parse($.getJSON({ 'url': "./data/sea.json", 'async': false }).responseText);
 let currentBuoyancy = 0;
 let brackets = [[], [], []];
 let Seacraft = {
