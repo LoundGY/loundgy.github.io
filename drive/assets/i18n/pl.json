@@ -1,0 +1,33 @@
+{
+    "ADDING":"Dodatek",
+    "ADD":"Dodaj",
+    "CANCEL":"Anulować",
+    "UPLOAD":"Przekazać plik",
+    "DOWNLOAD":"Pobieranie",
+    "DELETE":"Kasować",
+    "EMPTY-FIELD":"Wypełnij pole",
+    "LANGUAGE":"Język",
+    "LANGUAGES":{
+        "ru":"Rosyjski",
+        "en":"Angielski",
+        "pl":"Polskie"
+    },
+    "MENU":{
+        "all":"Wszystko", 
+        "maps":"Mapy", 
+        "images":"Zdjęcia", 
+        "movies":"Filmy", 
+        "other":"Inne"
+    },
+    "TABLE":{
+        "name": "Nazwa",
+        "author": "Nazwa użytkownika",
+        "size": "Rozmiar",
+        "category": "Rodzaj",
+        "date": "Data dodania"
+    },
+    "image":"Obraz",
+    "movie":"Wideo",
+    "map":"Mapa",
+    "other":"Inne"
+}
