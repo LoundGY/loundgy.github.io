@@ -1,0 +1,29 @@
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Seacraft last Ver.exe.config
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Seacraft last Ver.exe
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Seacraft last Ver.pdb
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Converter.g.cs
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Main.g.cs
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\MainWindow.g.cs
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\MapPage.g.cs
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\App.g.cs
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver_MarkupCompile.cache
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver_MarkupCompile.lref
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Converter.baml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Main.baml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\MainWindow.baml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\MapPage.baml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.g.resources
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft_last_Ver.Properties.Resources.resources
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.csproj.CopyComplete
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.exe
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.pdb
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Seacraft last Ver.exe.manifest
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\bin\Debug\Seacraft last Ver.application
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.TrustInfo.xml
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.exe.manifest
+C:\Users\User\source\repos\Seacraft last Ver\Seacraft last Ver\obj\Debug\Seacraft last Ver.application
