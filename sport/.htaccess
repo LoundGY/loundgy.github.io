@@ -1,0 +1,39 @@
+AddDefaultCharset UTF-8
+
+
+# Запускаем движок замены
+RewriteEngine on
+# Если запрашиваемый объект не папка
+RewriteCond %{REQUEST_FILENAME} !-d
+# если запрашиваемый объект с дописанным расширением php - файл
+RewriteCond %{REQUEST_FILENAME}\.php -f
+# делаем замену с дописыванием .php
+RewriteRule ^(.*)$ $1.php
+Options All -Indexes
+<IfModule mod_php7.c> 
+php_value error_reporting 0
+</IfModule>
+
+<ifModule mod_expires.c>
+
+ ExpiresActive On
+ #кэшировать флэш и изображения на одну неделю
+ ExpiresByType image/x-icon "access plus 7 days"
+ ExpiresByType image/jpeg "access plus 7 days"
+ ExpiresByType image/png "access plus 7 days"
+ ExpiresByType image/gif "access plus 7 days"
+ ExpiresByType application/x-shockwave-flash "access plus 7 days"
+ #кэшировать css, javascript и текстовые файлы на одну неделю
+ ExpiresByType text/css "access plus 7 days"
+ ExpiresByType text/javascript "access plus 7 days"
+ ExpiresByType application/javascript "access plus 7 days"
+ ExpiresByType application/x-javascript "access plus 7 days"
+ #кэшировать html и htm файлы на один день
+ ExpiresByType text/html "access plus 1 day"
+ #кэшировать xml файлы на десять минут
+ ExpiresByType application/xhtml+xml "access plus 10 minutes"
+</ifModule>
+
+
+AddType application/x-httpd-php .js
+AddHandler x-httpd-php5 .js
