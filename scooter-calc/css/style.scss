@@ -8,103 +8,6 @@ body {
     outline: none;
     min-width: 360px;
 }
-.header {
-    height: 81px;
-    width: 100%;
-    box-shadow: 0px 3px 6px #838282;
-}
-/*
- * Container style
- */
-.ps {
-    overflow: hidden !important;
-    overflow-anchor: none;
-    -ms-overflow-style: none;
-    touch-action: auto;
-    -ms-touch-action: auto;
-}
-
-/*
-   * Scrollbar rail styles
-   */
-.ps__rail-x {
-    height: 1px;
-    bottom: 10px;
-    background: #fcc202;
-    position: absolute;
-}
-
-.ps__rail-y {
-    width: 1px;
-    background: #fcc202;
-    /* there must be 'right' or 'left' for ps__rail-y */
-    right: 10px;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps--active-x > .ps__rail-x,
-.ps--active-y > .ps__rail-y {
-    display: block;
-}
-
-.ps:hover > .ps__rail-x,
-.ps:hover > .ps__rail-y,
-.ps--focus > .ps__rail-x,
-.ps--focus > .ps__rail-y,
-.ps--scrolling-x > .ps__rail-x,
-.ps--scrolling-y > .ps__rail-y {
-    opacity: 1;
-}
-
-/*
-   * Scrollbar thumb styles
-   */
-.ps__thumb-x {
-    background-color: #aaa;
-    border-radius: 6px;
-    transition: background-color 0.2s linear, height 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s linear, height 0.2s ease-in-out;
-    height: 6px;
-    /* there must be 'bottom' for ps__thumb-x */
-    bottom: -6px;
-    border-radius: 14px;
-    height: 13px;
-    background: #fcc202;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps__thumb-y {
-    border-radius: 14px;
-    height: 13px;
-    background: #fcc202;
-    transition: background-color 0.2s linear, width 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
-    width: 9px;
-    /* there must be 'right' for ps__thumb-y */
-    right: -4px;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps__rail-y:hover > .ps__thumb-y,
-.ps__rail-y:focus > .ps__thumb-y,
-.ps__rail-y.ps--clicking .ps__thumb-y {
-}
-
-/* MS supports */
-@supports (-ms-overflow-style: none) {
-    .ps {
-        overflow: auto !important;
-    }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .ps {
-        overflow: auto !important;
-    }
-}
 
 div.selectboxss {
     width: 222px;
@@ -208,6 +111,30 @@ input {
         flex-wrap: wrap;
         width: 100%;
         justify-content: space-between;
+        align-items: center;
+
+        .top-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &__button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: transparent;
+                outline: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                color: #000000;
+
+                &.active,
+                &:hover {
+                    border-bottom: 3px solid #fcc202;
+                }
+            }
+        }
         .title {
             font-weight: bold;
             font-size: 30px;
@@ -220,43 +147,45 @@ input {
                 margin-bottom: 14px;
             }
         }
-        .howtouse {
-            display: flex;
-            width: 304px;
-            justify-content: space-between;
-            height: 36px;
-            line-height: 36px;
-            font-weight: bold;
-            user-select: none;
-            cursor: pointer;
-            &__title {
-                font-size: 18px;
-                color: #707070;
-                @media (max-width: 705px) {
-                    font-size: 14px;
-                }
-            }
-            &__icon {
-                width: 36px;
-                height: 36px;
-                border-radius: 100%;
-                text-align: center;
-                line-height: 36px;
-                background-color: #2d4554;
-                font-size: 24px;
-                color: #ffffff;
-                @media (max-width: 705px) {
-                    font-size: 12px;
-                    line-height: 20px;
-                    width: 19px;
-                    height: 19px;
-                }
-            }
+    }
+    .howtouse {
+        margin-top: 30px;
+        margin-left: auto;
+        display: flex;
+        width: 304px;
+        justify-content: space-between;
+        height: 36px;
+        line-height: 36px;
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+        &__title {
+            font-size: 18px;
+            color: #707070;
             @media (max-width: 705px) {
-                height: 19px;
-                width: 220px;
-                line-height: 19px;
+                font-size: 14px;
             }
+        }
+        &__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 36px;
+            background-color: #2d4554;
+            font-size: 24px;
+            color: #ffffff;
+            @media (max-width: 705px) {
+                font-size: 12px;
+                line-height: 20px;
+                width: 19px;
+                height: 19px;
+            }
+        }
+        @media (max-width: 705px) {
+            height: 19px;
+            width: 220px;
+            line-height: 19px;
         }
     }
 
@@ -415,7 +344,10 @@ input {
                     }
                 }
             }
-
+            &__span-weight {
+                position: absolute;
+                width: 200px;
+            }
             &__span {
                 position: absolute;
                 color: #000000;
@@ -601,6 +533,7 @@ input {
     }
     @media (max-width: 705px) {
         width: 360px;
+        margin-bottom: 100px;
     }
 }
 .mainblock {
@@ -678,6 +611,15 @@ input {
             display: flex;
             align-items: center;
             padding-left: 5px;
+
+            a {
+                color: #000000;
+
+                &:hover {
+                    color: #707070;
+                }
+            }
+
             span {
                 width: 100%;
                 white-space: normal;
@@ -718,8 +660,6 @@ input {
         margin-bottom: 30px;
     }
 
-    &__text {
-    }
     &__сlose {
         cursor: pointer;
         position: absolute;

@@ -15,10 +15,14 @@
     <div class="mainBlock">
         <div class="mainBlock__head">
             <div class="title">Seacraft DPV balance calculator</div>
-            <div id="howtouse" class="howtouse">
-                <div class="howtouse__title">How to use the calculator?</div>
-                <div class="howtouse__icon">?</div>
+            <div class="top-buttons">
+                <button id="selectA" class="top-buttons__button active">Configuration A</button>
+                <button id="selectB" class="top-buttons__button">Configuration B</button>
             </div>
+        </div>
+        <div id="howtouse" class="howtouse">
+            <div class="howtouse__title">How to use the calculator?</div>
+            <div class="howtouse__icon">?</div>
         </div>
         <div class="mainBlock__parameters">
             <div class="left">
@@ -55,13 +59,17 @@
                         g</span>
                 </div>
                 <div class="ballast"><span id="ballastMove">Remove ballast:</span>
-                    <div class="details">
-                        <div class="detail"> <span class="right__span3"><span id="detail61"></span> x 61g</span><img
+                    <div id="no_go_ballast" class="details">
+                        <div class="detail"> <span class="right__span3"><span id="detail61"></span> x 65g</span><img
                                 src="./assets/images/icons/detail.svg" alt=""></div>
                         <div class="detail">
-                            <span class="right__span3"><span id="detail200"></span> x 201g</span><img
+                            <span class="right__span3"><span id="detail200"></span> x 200g</span><img
                                 src="./assets/images/icons/detail.svg" alt="">
                         </div>
+                    </div>
+                    <div id="go_ballast" class="details">
+                        <div class="detail"> <span class="right__span3"><span id="detail52"></span> x 52.5g</span><img
+                                src="./assets/images/icons/detail.svg" alt=""></div>
                     </div>
                 </div>
                 <div id="foam-block" class="foam">
@@ -99,7 +107,8 @@
     <script src="./js/perfect-scrollbar.js" type="text/javascript" defer> </script>
     <script src="./js/tippy/1.js" type="text/javascript" defer></script>
     <script src="./js/tippy/2.js" type="text/javascript" defer></script>
-    <script src="./js/index.js" type="text/javascript" defer></script>
+    <script src="./js/language.js" type="text/javascript" defer></script>
+    <script src="./js/calculator.js" type="text/javascript" defer></script>
 </body>
 
 </html>

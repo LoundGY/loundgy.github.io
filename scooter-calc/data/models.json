@@ -1,37 +1,26 @@
 [
   {
-    "name": "FUTURE",
-    "img": "../scooter-calc/assets/images/scooters/1.png",
-    "weight": "15.75",
-    "weightInWater": "15.78",
-    "accessories": [
-      1,
-      2,
-      3,
-      4,
-      6,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13
-    ]
+    "id": 1,
+    "model": "FUTURE",
+    "img": "/assets/images/scooters/1.png",
+    "weight": 15.9,
+    "weightInWater": 15.93,
+    "accessories": [1, 2, 3, 4, 7, 8, 9, 10, 11, 12]
   },
   {
-    "name": "GHOST",
-    "img": "../scooter-calc/assets/images/scooters/2.png",
-    "weight": "22.73",
-    "weightInWater": "22.77",
-    "accessories": [
-      5,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13
-    ]
+    "id": 2,
+    "model": "GHOST",
+    "img": "/assets/images/scooters/2.png",
+    "weight": 22.9,
+    "weightInWater": 22.94,
+    "accessories": [5, 6, 7, 8, 9, 10, 11, 12]
+  },
+  {
+    "id": 3,
+    "model": "GO",
+    "img": "/assets/images/scooters/3.png",
+    "weight": 9.8,
+    "weightInWater": 9.82,
+    "accessories": [1, 2, 3, 4, 8, 9]
   }
 ]
